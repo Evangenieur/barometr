@@ -57,10 +57,10 @@ function MapAppInner() {
     prevIndicatorRef.current = nav.indicatorId;
   }, [nav.indicatorId]);
 
-  // Show stats panel when a domain is selected (and no country active)
+  // Show stats panel when a domain is selected
   const prevDomainRef = useRef(nav.domainId);
   useEffect(() => {
-    if (nav.domainId !== null && nav.domainId !== prevDomainRef.current && rightPanel !== 'country') {
+    if (nav.domainId !== null && nav.domainId !== prevDomainRef.current) {
       setRightPanel('stats');
     }
     if (nav.domainId === null && prevDomainRef.current !== null && rightPanel !== 'country') {
