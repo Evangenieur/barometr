@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const costOfLivingModule: DomainModule = {
   definition: {
     id: 'cost-of-living',
-    label: { fr: 'Coût de la vie', en: 'Cost of Living' },
+    label: { fr: 'Coût de la vie', en: 'Cost of Living', es: 'Coste de vida' },
     description: {
       fr: 'Pouvoir d\'achat et conditions économiques des ménages — logement, inégalités, revenu disponible et précarité énergétique.',
       en: 'Purchasing power and household economic conditions — housing, inequality, disposable income and energy poverty.',
+      es: 'Poder adquisitivo y condiciones económicas de los hogares — vivienda, desigualdad, renta disponible y pobreza energética.',
     },
     icon: '🛒',
     group: 'economy',
@@ -19,9 +20,9 @@ const costOfLivingModule: DomainModule = {
     indicators: [
       {
         id: 'housing_cost_ratio',
-        label: { fr: 'Coût du logement / revenus', en: 'Housing cost / income ratio' },
+        label: { fr: 'Coût du logement / revenus', en: 'Housing cost / income ratio', es: 'Coste de vivienda / ingresos' },
         unit: 'percent',
-        unitLabel: { fr: '% revenus', en: '% income' },
+        unitLabel: { fr: '% revenus', en: '% income', es: '% ingresos' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 20, good: 28, fair: 35, poor: 45 },
@@ -30,9 +31,9 @@ const costOfLivingModule: DomainModule = {
       },
       {
         id: 'gini_coefficient',
-        label: { fr: 'Coefficient de Gini', en: 'Gini coefficient' },
+        label: { fr: 'Coefficient de Gini', en: 'Gini coefficient', es: 'Coeficiente de Gini' },
         unit: 'index',
-        unitLabel: { fr: 'Gini', en: 'Gini' },
+        unitLabel: { fr: 'Gini', en: 'Gini', es: 'Gini' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 25, good: 30, fair: 36, poor: 42 },
@@ -41,9 +42,9 @@ const costOfLivingModule: DomainModule = {
       },
       {
         id: 'purchasing_power_index',
-        label: { fr: 'Pouvoir d\'achat (PPA)', en: 'Purchasing power (PPP)' },
+        label: { fr: 'Pouvoir d\'achat (PPA)', en: 'Purchasing power (PPP)', es: 'Poder adquisitivo (PPA)' },
         unit: 'index',
-        unitLabel: { fr: 'base 100', en: 'index 100' },
+        unitLabel: { fr: 'base 100', en: 'index 100', es: 'base 100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 120, good: 100, fair: 75, poor: 50 },
@@ -52,9 +53,9 @@ const costOfLivingModule: DomainModule = {
       },
       {
         id: 'energy_poverty_rate',
-        label: { fr: 'Précarité énergétique', en: 'Energy poverty rate' },
+        label: { fr: 'Précarité énergétique', en: 'Energy poverty rate', es: 'Pobreza energética' },
         unit: 'percent',
-        unitLabel: { fr: '%', en: '%' },
+        unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',
         weight: 2,
         thresholds: { excellent: 5, good: 10, fair: 18, poor: 28 },

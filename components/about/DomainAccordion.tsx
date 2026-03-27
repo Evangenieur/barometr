@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronRight, Copy, ExternalLink } from 'lucide-react';
 import type { DomainModule } from '@/lib/domains/types';
-import { t } from '@/lib/utils/i18n';
+import { t, ui } from '@/lib/utils/i18n';
 import { cn } from '@/lib/utils/cn';
 
 interface DomainAccordionProps {
   mod: DomainModule;
-  locale?: 'fr' | 'en';
+  locale?: 'fr' | 'en' | 'es';
 }
 
 export function DomainAccordion({ mod, locale = 'fr' }: DomainAccordionProps) {
@@ -74,10 +74,10 @@ export function DomainAccordion({ mod, locale = 'fr' }: DomainAccordionProps) {
             <table className="w-full text-xs">
               <thead>
                 <tr className="border-b border-border-subtle">
-                  <th className="text-left px-4 py-2 text-text-muted font-medium">Indicateur</th>
-                  <th className="text-left px-3 py-2 text-text-muted font-medium">Unité</th>
-                  <th className="text-left px-3 py-2 text-text-muted font-medium">Direction</th>
-                  <th className="text-right px-3 py-2 text-text-muted font-medium">Poids</th>
+                  <th className="text-left px-4 py-2 text-text-muted font-medium">{ui('indicator', locale)}</th>
+                  <th className="text-left px-3 py-2 text-text-muted font-medium">{ui('unit', locale)}</th>
+                  <th className="text-left px-3 py-2 text-text-muted font-medium">{ui('direction', locale)}</th>
+                  <th className="text-right px-3 py-2 text-text-muted font-medium">{ui('weight', locale)}</th>
                 </tr>
               </thead>
               <tbody>
@@ -104,7 +104,7 @@ export function DomainAccordion({ mod, locale = 'fr' }: DomainAccordionProps) {
                             ? 'text-score-good bg-score-good/10'
                             : 'text-score-fair bg-score-fair/10'
                         )}>
-                          {ind.direction === 'higher_is_better' ? '↑ Plus = mieux' : '↓ Moins = mieux'}
+                          {ind.direction === 'higher_is_better' ? ui('higherBetter', locale) : ui('lowerBetter', locale)}
                         </span>
                       </td>
                       <td className="px-3 py-2 text-right">
@@ -128,7 +128,7 @@ export function DomainAccordion({ mod, locale = 'fr' }: DomainAccordionProps) {
 
           {/* Sources */}
           <div className="px-4 py-3 border-t border-border-subtle">
-            <div className="text-2xs text-text-muted uppercase tracking-wider font-semibold mb-2">Sources</div>
+            <div className="text-2xs text-text-muted uppercase tracking-wider font-semibold mb-2">{ui('sources', locale)}</div>
             <ul className="space-y-1">
               {definition.seedSources.map((url) => (
                 <li key={url} className="flex items-center gap-2">

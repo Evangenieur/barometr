@@ -2,7 +2,7 @@
 
 export type UnitType = 'percent' | 'years' | 'ratio' | 'currency' | 'index' | 'count';
 export type Direction = 'higher_is_better' | 'lower_is_better';
-export type Locale = 'fr' | 'en';
+export type Locale = 'fr' | 'en' | 'es';
 
 export interface IndicatorDefinition {
   id: string;

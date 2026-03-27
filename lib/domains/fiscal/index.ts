@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const fiscalModule: DomainModule = {
   definition: {
     id: 'fiscal',
-    label: { fr: 'Dette & Pression fiscale', en: 'Debt & Tax Burden' },
+    label: { fr: 'Dette & Pression fiscale', en: 'Debt & Tax Burden', es: 'Deuda y presión fiscal' },
     description: {
       fr: 'Viabilité des finances publiques : dette souveraine, pression fiscale, solde budgétaire et espace fiscal disponible.',
       en: 'Public finance sustainability: sovereign debt, tax burden, budget balance and available fiscal space.',
+      es: 'Sostenibilidad de las finanzas públicas: deuda soberana, presión fiscal, saldo presupuestario y espacio fiscal disponible.',
     },
     icon: '📊',
     group: 'economy',
@@ -19,9 +20,9 @@ const fiscalModule: DomainModule = {
     indicators: [
       {
         id: 'public_debt_gdp',
-        label: { fr: 'Dette publique (% PIB)', en: 'Public debt (% GDP)' },
+        label: { fr: 'Dette publique (% PIB)', en: 'Public debt (% GDP)', es: 'Deuda pública (% PIB)' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 40, good: 65, fair: 90, poor: 120 },
@@ -30,9 +31,9 @@ const fiscalModule: DomainModule = {
       },
       {
         id: 'tax_burden_gdp',
-        label: { fr: 'Prélèvements obligatoires (% PIB)', en: 'Tax burden (% GDP)' },
+        label: { fr: 'Prélèvements obligatoires (% PIB)', en: 'Tax burden (% GDP)', es: 'Carga fiscal (% PIB)' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'lower_is_better',
         weight: 2,
         thresholds: { excellent: 25, good: 33, fair: 40, poor: 48 },
@@ -41,9 +42,9 @@ const fiscalModule: DomainModule = {
       },
       {
         id: 'budget_balance_gdp',
-        label: { fr: 'Solde budgétaire (% PIB)', en: 'Budget balance (% GDP)' },
+        label: { fr: 'Solde budgétaire (% PIB)', en: 'Budget balance (% GDP)', es: 'Saldo presupuestario (% PIB)' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 1, good: -1.5, fair: -3.5, poor: -6 },
@@ -52,9 +53,9 @@ const fiscalModule: DomainModule = {
       },
       {
         id: 'fiscal_space_index',
-        label: { fr: 'Espace fiscal', en: 'Fiscal space index' },
+        label: { fr: 'Espace fiscal', en: 'Fiscal space index', es: 'Espacio fiscal' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 75, good: 55, fair: 38, poor: 22 },

@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const geopoliticalRiskModule: DomainModule = {
   definition: {
     id: 'geopolitical-risk',
-    label: { fr: 'Risque géopolitique', en: 'Geopolitical Risk' },
+    label: { fr: 'Risque géopolitique', en: 'Geopolitical Risk', es: 'Riesgo geopolítico' },
     description: {
       fr: 'Exposition aux risques géopolitiques : conflits régionaux, efficacité gouvernementale, relations internationales et stabilité institutionnelle.',
       en: 'Exposure to geopolitical risks: regional conflicts, government effectiveness, international relations and institutional stability.',
+      es: 'Exposición a riesgos geopolíticos: conflictos regionales, eficacia gubernamental, relaciones internacionales y estabilidad institucional.',
     },
     icon: '🌐',
     group: 'security',
@@ -20,9 +21,9 @@ const geopoliticalRiskModule: DomainModule = {
     indicators: [
       {
         id: 'government_effectiveness',
-        label: { fr: 'Efficacité gouvernementale', en: 'Government effectiveness' },
+        label: { fr: 'Efficacité gouvernementale', en: 'Government effectiveness', es: 'Eficacia gubernamental' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 85, good: 68, fair: 48, poor: 28 },
@@ -31,9 +32,9 @@ const geopoliticalRiskModule: DomainModule = {
       },
       {
         id: 'democracy_index',
-        label: { fr: 'Indice de démocratie', en: 'Democracy index' },
+        label: { fr: 'Indice de démocratie', en: 'Democracy index', es: 'Índice de democracia' },
         unit: 'index',
-        unitLabel: { fr: 'score /10', en: 'score /10' },
+        unitLabel: { fr: 'score /10', en: 'score /10', es: 'score /10' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 8.0, good: 6.5, fair: 4.5, poor: 2.5 },
@@ -42,9 +43,9 @@ const geopoliticalRiskModule: DomainModule = {
       },
       {
         id: 'conflict_exposure',
-        label: { fr: 'Exposition aux conflits', en: 'Conflict exposure' },
+        label: { fr: 'Exposition aux conflits', en: 'Conflict exposure', es: 'Exposición a conflictos' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100 (inv.)', en: 'index /100 (inv.)' },
+        unitLabel: { fr: 'indice /100 (inv.)', en: 'index /100 (inv.)', es: 'índice /100 (inv.)' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 90, good: 75, fair: 55, poor: 35 },
@@ -53,9 +54,9 @@ const geopoliticalRiskModule: DomainModule = {
       },
       {
         id: 'international_relations',
-        label: { fr: 'Relations internationales', en: 'International relations' },
+        label: { fr: 'Relations internationales', en: 'International relations', es: 'Relaciones internacionales' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 82, good: 68, fair: 50, poor: 30 },

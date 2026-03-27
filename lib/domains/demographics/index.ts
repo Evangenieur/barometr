@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const demographicsModule: DomainModule = {
   definition: {
     id: 'demographics',
-    label: { fr: 'Démographie', en: 'Demographics' },
+    label: { fr: 'Démographie', en: 'Demographics', es: 'Demografía' },
     description: {
       fr: 'Dynamiques démographiques : fécondité, vieillissement de la population, urbanisation et croissance démographique.',
       en: 'Demographic dynamics: fertility, population aging, urbanization and population growth.',
+      es: 'Dinámicas demográficas: fecundidad, envejecimiento de la población, urbanización y crecimiento demográfico.',
     },
     icon: '👥',
     group: 'society',
@@ -19,9 +20,9 @@ const demographicsModule: DomainModule = {
     indicators: [
       {
         id: 'fertility_rate',
-        label: { fr: 'Indice de fécondité', en: 'Fertility rate' },
+        label: { fr: 'Indice de fécondité', en: 'Fertility rate', es: 'Tasa de fecundidad' },
         unit: 'ratio',
-        unitLabel: { fr: 'enfants/femme', en: 'children/woman' },
+        unitLabel: { fr: 'enfants/femme', en: 'children/woman', es: 'hijos/mujer' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 2.1, good: 1.8, fair: 1.5, poor: 1.2 },
@@ -30,9 +31,9 @@ const demographicsModule: DomainModule = {
       },
       {
         id: 'median_age',
-        label: { fr: 'Âge médian', en: 'Median age' },
+        label: { fr: 'Âge médian', en: 'Median age', es: 'Edad mediana' },
         unit: 'years',
-        unitLabel: { fr: 'ans', en: 'years' },
+        unitLabel: { fr: 'ans', en: 'years', es: 'años' },
         direction: 'lower_is_better',
         weight: 2,
         thresholds: { excellent: 30, good: 37, fair: 43, poor: 48 },
@@ -41,9 +42,9 @@ const demographicsModule: DomainModule = {
       },
       {
         id: 'urbanization_rate',
-        label: { fr: 'Taux d\'urbanisation', en: 'Urbanization rate' },
+        label: { fr: 'Taux d\'urbanisation', en: 'Urbanization rate', es: 'Tasa de urbanización' },
         unit: 'percent',
-        unitLabel: { fr: '% population', en: '% population' },
+        unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'higher_is_better',
         weight: 1,
         thresholds: { excellent: 85, good: 72, fair: 58, poor: 40 },
@@ -52,9 +53,9 @@ const demographicsModule: DomainModule = {
       },
       {
         id: 'population_growth',
-        label: { fr: 'Croissance démographique', en: 'Population growth' },
+        label: { fr: 'Croissance démographique', en: 'Population growth', es: 'Crecimiento demográfico' },
         unit: 'percent',
-        unitLabel: { fr: '%/an', en: '%/yr' },
+        unitLabel: { fr: '%/an', en: '%/yr', es: '%/año' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 1.0, good: 0.5, fair: 0.0, poor: -0.5 },

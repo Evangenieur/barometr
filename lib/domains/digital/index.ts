@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const digitalModule: DomainModule = {
   definition: {
     id: 'digital',
-    label: { fr: 'Numérique & Innovation', en: 'Digital & Innovation' },
+    label: { fr: 'Numérique & Innovation', en: 'Digital & Innovation', es: 'Digital e Innovación' },
     description: {
       fr: 'Transformation numérique et capacité d\'innovation : e-gouvernement, cybersécurité, compétences numériques et innovation technologique.',
       en: 'Digital transformation and innovation capacity: e-government, cybersecurity, digital skills and technological innovation.',
+      es: 'Transformación digital y capacidad de innovación: gobierno electrónico, ciberseguridad, competencias digitales e innovación tecnológica.',
     },
     icon: '💻',
     group: 'society',
@@ -19,9 +20,9 @@ const digitalModule: DomainModule = {
     indicators: [
       {
         id: 'egov_index',
-        label: { fr: 'Indice e-gouvernement', en: 'E-Government index' },
+        label: { fr: 'Indice e-gouvernement', en: 'E-Government index', es: 'Índice de gobierno electrónico' },
         unit: 'index',
-        unitLabel: { fr: 'score', en: 'score' },
+        unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 0.85, good: 0.70, fair: 0.55, poor: 0.40 },
@@ -30,9 +31,9 @@ const digitalModule: DomainModule = {
       },
       {
         id: 'cybersecurity_index',
-        label: { fr: 'Indice cybersécurité', en: 'Cybersecurity index' },
+        label: { fr: 'Indice cybersécurité', en: 'Cybersecurity index', es: 'Índice de ciberseguridad' },
         unit: 'index',
-        unitLabel: { fr: '/100', en: '/100' },
+        unitLabel: { fr: '/100', en: '/100', es: '/100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 90, good: 70, fair: 50, poor: 30 },
@@ -41,9 +42,9 @@ const digitalModule: DomainModule = {
       },
       {
         id: 'digital_skills',
-        label: { fr: 'Compétences numériques', en: 'Digital skills' },
+        label: { fr: 'Compétences numériques', en: 'Digital skills', es: 'Competencias digitales' },
         unit: 'index',
-        unitLabel: { fr: '/100', en: '/100' },
+        unitLabel: { fr: '/100', en: '/100', es: '/100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 80, good: 65, fair: 50, poor: 35 },
@@ -52,9 +53,9 @@ const digitalModule: DomainModule = {
       },
       {
         id: 'innovation_index',
-        label: { fr: 'Indice d\'innovation', en: 'Innovation index' },
+        label: { fr: 'Indice d\'innovation', en: 'Innovation index', es: 'Índice de innovación' },
         unit: 'index',
-        unitLabel: { fr: '/100', en: '/100' },
+        unitLabel: { fr: '/100', en: '/100', es: '/100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 60, good: 45, fair: 30, poor: 18 },

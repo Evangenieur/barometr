@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const ecologyModule: DomainModule = {
   definition: {
     id: 'ecology',
-    label: { fr: 'Écologie', en: 'Ecology' },
+    label: { fr: 'Écologie', en: 'Ecology', es: 'Ecología' },
     description: {
       fr: 'Évalue la performance environnementale des pays : émissions de CO₂, part des énergies renouvelables, couverture forestière et qualité de l\'air.',
       en: 'Evaluates environmental performance: CO₂ emissions, renewable energy share, forest coverage and air quality.',
+      es: 'Evalúa el desempeño ambiental de los países: emisiones de CO₂, cuota de energías renovables, cobertura forestal y calidad del aire.',
     },
     icon: '🌿',
     group: 'environment',
@@ -20,9 +21,9 @@ const ecologyModule: DomainModule = {
     indicators: [
       {
         id: 'co2_per_capita',
-        label: { fr: 'Émissions CO₂ par habitant', en: 'CO₂ per capita' },
+        label: { fr: 'Émissions CO₂ par habitant', en: 'CO₂ per capita', es: 'Emisiones CO₂ por habitante' },
         unit: 'ratio',
-        unitLabel: { fr: 't/hab.', en: 't/cap.' },
+        unitLabel: { fr: 't/hab.', en: 't/cap.', es: 't/hab.' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 3, good: 6, fair: 10, poor: 15 },
@@ -31,9 +32,9 @@ const ecologyModule: DomainModule = {
       },
       {
         id: 'renewables_share',
-        label: { fr: 'Énergies renouvelables (% électricité)', en: 'Renewables share (% electricity)' },
+        label: { fr: 'Énergies renouvelables (% électricité)', en: 'Renewables share (% electricity)', es: 'Energías renovables (% electricidad)' },
         unit: 'percent',
-        unitLabel: { fr: '% élec.', en: '% elec.' },
+        unitLabel: { fr: '% élec.', en: '% elec.', es: '% elec.' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 70, good: 45, fair: 25, poor: 10 },
@@ -42,9 +43,9 @@ const ecologyModule: DomainModule = {
       },
       {
         id: 'forest_coverage',
-        label: { fr: 'Couverture forestière', en: 'Forest coverage' },
+        label: { fr: 'Couverture forestière', en: 'Forest coverage', es: 'Cobertura forestal' },
         unit: 'percent',
-        unitLabel: { fr: '% territoire', en: '% land area' },
+        unitLabel: { fr: '% territoire', en: '% land area', es: '% territorio' },
         direction: 'higher_is_better',
         weight: 1,
         thresholds: { excellent: 55, good: 35, fair: 20, poor: 8 },
@@ -53,9 +54,9 @@ const ecologyModule: DomainModule = {
       },
       {
         id: 'air_quality',
-        label: { fr: 'Qualité de l\'air', en: 'Air quality' },
+        label: { fr: 'Qualité de l\'air', en: 'Air quality', es: 'Calidad del aire' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 88, good: 72, fair: 55, poor: 35 },

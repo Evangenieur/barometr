@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const economicSectorsModule: DomainModule = {
   definition: {
     id: 'economic-sectors',
-    label: { fr: 'Secteurs économiques', en: 'Economic Sectors' },
+    label: { fr: 'Secteurs économiques', en: 'Economic Sectors', es: 'Sectores económicos' },
     description: {
       fr: 'Structure économique et compétitivité : PIB par habitant, chômage, part des services et industrie manufacturière.',
       en: 'Economic structure and competitiveness: GDP per capita, unemployment, services share and manufacturing.',
+      es: 'Estructura económica y competitividad: PIB por habitante, desempleo, cuota de servicios e industria manufacturera.',
     },
     icon: '🏭',
     group: 'economy',
@@ -19,9 +20,9 @@ const economicSectorsModule: DomainModule = {
     indicators: [
       {
         id: 'gdp_per_capita',
-        label: { fr: 'PIB par habitant (PPA, k$)', en: 'GDP per capita (PPP, k$)' },
+        label: { fr: 'PIB par habitant (PPA, k$)', en: 'GDP per capita (PPP, k$)', es: 'PIB por habitante (PPA, k$)' },
         unit: 'currency',
-        unitLabel: { fr: 'k$ PPA', en: 'k$ PPP' },
+        unitLabel: { fr: 'k$ PPA', en: 'k$ PPP', es: 'k$ PPA' },
         direction: 'higher_is_better',
         weight: 4,
         thresholds: { excellent: 55, good: 35, fair: 18, poor: 8 },
@@ -30,9 +31,9 @@ const economicSectorsModule: DomainModule = {
       },
       {
         id: 'unemployment_rate',
-        label: { fr: 'Taux de chômage', en: 'Unemployment rate' },
+        label: { fr: 'Taux de chômage', en: 'Unemployment rate', es: 'Tasa de desempleo' },
         unit: 'percent',
-        unitLabel: { fr: '%', en: '%' },
+        unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 3.5, good: 5.5, fair: 8.0, poor: 12.0 },
@@ -41,9 +42,9 @@ const economicSectorsModule: DomainModule = {
       },
       {
         id: 'services_share',
-        label: { fr: 'Part des services (% PIB)', en: 'Services share (% GDP)' },
+        label: { fr: 'Part des services (% PIB)', en: 'Services share (% GDP)', es: 'Cuota de servicios (% PIB)' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 72, good: 60, fair: 48, poor: 35 },
@@ -52,9 +53,9 @@ const economicSectorsModule: DomainModule = {
       },
       {
         id: 'manufacturing_share',
-        label: { fr: 'Part industrie manufacturière (% PIB)', en: 'Manufacturing share (% GDP)' },
+        label: { fr: 'Part industrie manufacturière (% PIB)', en: 'Manufacturing share (% GDP)', es: 'Cuota de industria manufacturera (% PIB)' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 20, good: 15, fair: 10, poor: 5 },

@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const corruptionModule: DomainModule = {
   definition: {
     id: 'corruption',
-    label: { fr: 'Transparence', en: 'Transparency' },
+    label: { fr: 'Transparence', en: 'Transparency', es: 'Transparencia' },
     description: {
       fr: 'Mesure la corruption perçue, la liberté de la presse et la transparence budgétaire des États.',
       en: 'Measures perceived corruption, press freedom and budget transparency.',
+      es: 'Mide la corrupción percibida, la libertad de prensa y la transparencia presupuestaria de los Estados.',
     },
     icon: '⚖️',
     group: 'security',
@@ -19,9 +20,9 @@ const corruptionModule: DomainModule = {
     indicators: [
       {
         id: 'cpi_score',
-        label: { fr: 'Indice de perception corruption (IPC)', en: 'Corruption Perceptions Index (CPI)' },
+        label: { fr: 'Indice de perception corruption (IPC)', en: 'Corruption Perceptions Index (CPI)', es: 'Índice de Percepción de la Corrupción (IPC)' },
         unit: 'index',
-        unitLabel: { fr: 'score /100', en: 'score /100' },
+        unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
         weight: 4,
         thresholds: { excellent: 70, good: 55, fair: 40, poor: 25 },
@@ -30,9 +31,9 @@ const corruptionModule: DomainModule = {
       },
       {
         id: 'press_freedom',
-        label: { fr: 'Liberté de la presse (RSF)', en: 'Press freedom (RSF)' },
+        label: { fr: 'Liberté de la presse (RSF)', en: 'Press freedom (RSF)', es: 'Libertad de prensa (RSF)' },
         unit: 'index',
-        unitLabel: { fr: 'score /100', en: 'score /100' },
+        unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 80, good: 65, fair: 45, poor: 25 },
@@ -41,9 +42,9 @@ const corruptionModule: DomainModule = {
       },
       {
         id: 'budget_transparency',
-        label: { fr: 'Transparence budgétaire', en: 'Budget transparency' },
+        label: { fr: 'Transparence budgétaire', en: 'Budget transparency', es: 'Transparencia presupuestaria' },
         unit: 'index',
-        unitLabel: { fr: 'score /100', en: 'score /100' },
+        unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 80, good: 65, fair: 45, poor: 30 },

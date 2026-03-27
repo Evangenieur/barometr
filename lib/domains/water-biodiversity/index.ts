@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const waterBiodiversityModule: DomainModule = {
   definition: {
     id: 'water-biodiversity',
-    label: { fr: 'Eau & Biodiversit\u00e9', en: 'Water & Biodiversity' },
+    label: { fr: 'Eau & Biodiversit\u00e9', en: 'Water & Biodiversity', es: 'Agua y Biodiversidad' },
     description: {
       fr: 'Acc\u00e8s \u00e0 l\'eau potable, stress hydrique, esp\u00e8ces menac\u00e9es et protection des \u00e9cosyst\u00e8mes naturels.',
       en: 'Access to safe drinking water, water stress, threatened species and natural ecosystem protection.',
+      es: 'Acceso al agua potable, estrés hídrico, especies amenazadas y protección de ecosistemas naturales.',
     },
     icon: '\uD83C\uDF0A',
     group: 'environment',
@@ -20,9 +21,9 @@ const waterBiodiversityModule: DomainModule = {
     indicators: [
       {
         id: 'safe_water_access',
-        label: { fr: 'Acc\u00e8s eau potable', en: 'Safe water access' },
+        label: { fr: 'Acc\u00e8s eau potable', en: 'Safe water access', es: 'Acceso a agua potable' },
         unit: 'percent',
-        unitLabel: { fr: '% pop.', en: '% pop.' },
+        unitLabel: { fr: '% pop.', en: '% pop.', es: '% pob.' },
         direction: 'higher_is_better',
         weight: 4,
         thresholds: { excellent: 99, good: 95, fair: 85, poor: 70 },
@@ -31,9 +32,9 @@ const waterBiodiversityModule: DomainModule = {
       },
       {
         id: 'water_stress',
-        label: { fr: 'Stress hydrique', en: 'Water stress' },
+        label: { fr: 'Stress hydrique', en: 'Water stress', es: 'Estrés hídrico' },
         unit: 'percent',
-        unitLabel: { fr: '% ress.', en: '% res.' },
+        unitLabel: { fr: '% ress.', en: '% res.', es: '% rec.' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 10, good: 25, fair: 50, poor: 80 },
@@ -42,9 +43,9 @@ const waterBiodiversityModule: DomainModule = {
       },
       {
         id: 'threatened_species',
-        label: { fr: 'Esp\u00e8ces menac\u00e9es', en: 'Threatened species' },
+        label: { fr: 'Esp\u00e8ces menac\u00e9es', en: 'Threatened species', es: 'Especies amenazadas' },
         unit: 'percent',
-        unitLabel: { fr: '% esp\u00e8ces', en: '% species' },
+        unitLabel: { fr: '% esp\u00e8ces', en: '% species', es: '% especies' },
         direction: 'lower_is_better',
         weight: 2,
         thresholds: { excellent: 5, good: 12, fair: 20, poor: 35 },
@@ -53,9 +54,9 @@ const waterBiodiversityModule: DomainModule = {
       },
       {
         id: 'protected_areas',
-        label: { fr: 'Aires prot\u00e9g\u00e9es', en: 'Protected areas' },
+        label: { fr: 'Aires prot\u00e9g\u00e9es', en: 'Protected areas', es: 'Áreas protegidas' },
         unit: 'percent',
-        unitLabel: { fr: '% territ.', en: '% land' },
+        unitLabel: { fr: '% territ.', en: '% land', es: '% territ.' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 25, good: 17, fair: 10, poor: 5 },

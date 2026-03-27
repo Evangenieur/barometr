@@ -8,6 +8,7 @@ import { CountryRankingList } from '@/components/panels/CountryRankingList';
 import { getFlagUrl } from '@/lib/utils/flags';
 import { getDomainForIndicator } from '@/lib/domains/registry';
 import { cn } from '@/lib/utils/cn';
+import { ui } from '@/lib/utils/i18n';
 import type { GlobalStats, DomainStats, IndicatorStats } from '@/lib/domains/types';
 import type { Locale } from '@/lib/domains/types';
 
@@ -82,10 +83,10 @@ export function GlobalStatsPanel({
     : stats.avgScore;
 
   const label = mode === 'global'
-    ? (locale === 'fr' ? 'Moyenne mondiale' : 'World average')
+    ? ui('worldAvg', locale)
     : mode === 'domain'
-    ? (locale === 'fr' ? 'Moyenne domaine' : 'Domain average')
-    : (locale === 'fr' ? 'Moyenne indicateur' : 'Indicator average');
+    ? ui('domainAvg', locale)
+    : ui('indicatorAvg', locale);
 
   // Indicator metadata (description, year, sources)
   const indicatorMeta = (() => {
@@ -116,7 +117,7 @@ export function GlobalStatsPanel({
           <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 mt-0.5">
             {indicatorMeta.dataYear && (
               <span className="text-2xs text-text-muted">
-                {locale === 'fr' ? 'Données' : 'Data'} {indicatorMeta.dataYear}
+                {ui('data', locale)} {indicatorMeta.dataYear}
               </span>
             )}
             {indicatorMeta.sources.map((url) => (
@@ -144,14 +145,14 @@ export function GlobalStatsPanel({
           <WeatherBadge score={avgScore} size="lg" showScore={false} showLabel={false} />
         </div>
         <div className="text-xs text-text-muted mt-1">
-          {stats.totalCountries} {locale === 'fr' ? 'pays couverts' : 'countries covered'}
+          {stats.totalCountries} {ui('countriesCovered', locale)}
         </div>
       </div>
 
       {/* Distribution */}
       <div>
         <div className="text-xs text-text-muted mb-2">
-          {locale === 'fr' ? 'Distribution' : 'Distribution'}
+          {ui('distribution', locale)}
         </div>
         <DistributionBar
           distribution={stats.distribution}
@@ -184,7 +185,7 @@ export function GlobalStatsPanel({
           onClick={() => setShowRanking((r) => !r)}
           className="w-full flex items-center justify-between px-2 py-1.5 rounded-md text-xs text-text-secondary hover:text-text-primary hover:bg-elevated transition-colors"
         >
-          <span>{locale === 'fr' ? 'Classement complet' : 'Full ranking'}</span>
+          <span>{ui('fullRanking', locale)}</span>
           <span className="text-text-muted">{showRanking ? '▲' : '▼'}</span>
         </button>
 
@@ -215,8 +216,8 @@ function BestWorstCard({ type, geoCode, geoName, score, locale }: BestWorstCardP
   const Icon = type === 'best' ? Trophy : AlertTriangle;
   const color = type === 'best' ? '#22C55E' : '#F97316';
   const label = type === 'best'
-    ? (locale === 'fr' ? 'Meilleur' : 'Best')
-    : (locale === 'fr' ? 'Pire' : 'Worst');
+    ? ui('best', locale)
+    : ui('worst', locale);
 
   return (
     <div className={cn(

@@ -27,10 +27,10 @@ import climateRiskModule from '@/lib/domains/climate-risk';
 // ─── Domain groups ────────────────────────────────────────────────────────────
 
 export const DOMAIN_GROUPS: DomainGroup[] = [
-  { id: 'economy',     label: { fr: 'Économie',      en: 'Economy'     } },
-  { id: 'society',     label: { fr: 'Société',       en: 'Society'     } },
-  { id: 'security',    label: { fr: 'Sécurité',      en: 'Security'    } },
-  { id: 'environment', label: { fr: 'Environnement', en: 'Environment' } },
+  { id: 'economy',     label: { fr: 'Économie',      en: 'Economy',     es: 'Economía'     } },
+  { id: 'society',     label: { fr: 'Société',       en: 'Society',     es: 'Sociedad'     } },
+  { id: 'security',    label: { fr: 'Sécurité',      en: 'Security',    es: 'Seguridad'    } },
+  { id: 'environment', label: { fr: 'Environnement', en: 'Environment', es: 'Medio ambiente' } },
 ];
 
 // ─── Domain registry ──────────────────────────────────────────────────────────

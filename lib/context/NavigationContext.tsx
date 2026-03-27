@@ -51,7 +51,7 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
       countryCode: countryCode ?? null,
       countryName: countryName ?? null,
     });
-    if (lang === 'en' || lang === 'fr') {
+    if (lang === 'en' || lang === 'fr' || lang === 'es') {
       setLocale(lang);
     }
   }, []);

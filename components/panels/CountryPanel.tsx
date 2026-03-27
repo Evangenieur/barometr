@@ -9,7 +9,7 @@ import { getFlagUrl } from '@/lib/utils/flags';
 import { getAllDomains } from '@/lib/domains/registry';
 import { AGGREGATE_DATA } from '@/lib/aggregate';
 import { getScoreColor } from '@/lib/scoring';
-import { t } from '@/lib/utils/i18n';
+import { t, ui } from '@/lib/utils/i18n';
 import { cn } from '@/lib/utils/cn';
 import type { Locale } from '@/lib/domains/types';
 
@@ -60,12 +60,12 @@ export function CountryPanel({
             <span className="text-xl"><img src={getFlagUrl(countryCode)} alt={countryName} className="w-7 h-5 object-cover rounded-[3px] shadow-sm border border-white/10" /></span>
             <h2 className="text-md font-semibold text-text-primary">{countryName}</h2>
           </div>
-          <button onClick={onClose} className="text-text-muted hover:text-text-primary transition-colors" aria-label="Fermer">
+          <button onClick={onClose} className="text-text-muted hover:text-text-primary transition-colors" aria-label={ui('close', locale)}>
             <X size={18} />
           </button>
         </div>
         <div className="flex-1 flex items-center justify-center text-text-muted text-sm">
-          Aucune donnée disponible
+          {ui('noDataAvailable', locale)}
         </div>
       </aside>
     );
@@ -102,7 +102,7 @@ export function CountryPanel({
               <p className="text-xs text-text-muted font-mono mt-1 tabular-nums">
                 {rank}
                 <sup className="text-2xs">e</sup>
-                {' '}sur {totalRanked} pays classés
+                {' '}{ui('of', locale)} {totalRanked} {ui('countriesRanked', locale)}
               </p>
             )}
           </div>
@@ -207,7 +207,7 @@ export function CountryPanel({
       {/* Footer */}
       <div className="p-3 border-t border-border-subtle flex-shrink-0">
         <p className="text-2xs text-text-muted text-center">
-          Données {aggregate.dataYear} · <span className="text-2xs italic">Tendances sur 1 an</span>
+          {ui('data', locale)} {aggregate.dataYear} · <span className="text-2xs italic">{ui('estimatedTrend', locale)}</span>
         </p>
       </div>
     </aside>

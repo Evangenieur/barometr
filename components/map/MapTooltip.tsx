@@ -3,6 +3,8 @@
 import { createPortal } from 'react-dom';
 import { WeatherBadge } from '@/components/ui/WeatherBadge';
 import { getFlagUrl } from '@/lib/utils/flags';
+import { ui } from '@/lib/utils/i18n';
+import type { Locale } from '@/lib/domains/types';
 
 interface MapTooltipProps {
   x: number;
@@ -14,6 +16,7 @@ interface MapTooltipProps {
   totalCountries: number;
   rawValue?: number;
   rawValueLabel?: string;
+  locale?: Locale;
 }
 
 export function MapTooltip({
@@ -26,6 +29,7 @@ export function MapTooltip({
   totalCountries,
   rawValue,
   rawValueLabel,
+  locale = 'fr',
 }: MapTooltipProps) {
   const OFFSET = 14;
 
@@ -44,7 +48,7 @@ export function MapTooltip({
 
         <div className="flex items-center gap-2 mb-1">
           {score === -1 ? (
-            <span className="text-xs text-text-muted">Sans données</span>
+            <span className="text-xs text-text-muted">{ui('noData', locale)}</span>
           ) : (
             <>
               <span className="font-mono text-md font-bold text-text-primary tabular-nums">{score}</span>
@@ -56,7 +60,7 @@ export function MapTooltip({
 
         {rank > 0 && score !== -1 && (
           <div className="text-2xs text-text-muted font-mono tabular-nums">
-            {rank}e / {totalCountries} pays
+            {rank}{locale === 'fr' ? 'e' : locale === 'es' ? 'o' : rank === 1 ? 'st' : rank === 2 ? 'nd' : rank === 3 ? 'rd' : 'th'} / {totalCountries} {ui('countries', locale)}
           </div>
         )}
 

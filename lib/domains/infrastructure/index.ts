@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const infrastructureModule: DomainModule = {
   definition: {
     id: 'infrastructure',
-    label: { fr: 'Infrastructure', en: 'Infrastructure' },
+    label: { fr: 'Infrastructure', en: 'Infrastructure', es: 'Infraestructura' },
     description: {
       fr: 'Qualité des infrastructures nationales : accès à internet, réseau routier, énergie électrique et performance logistique.',
       en: 'Quality of national infrastructure: internet access, road networks, electricity and logistics performance.',
+      es: 'Calidad de las infraestructuras nacionales: acceso a internet, red vial, energía eléctrica y rendimiento logístico.',
     },
     icon: '🏗️',
     group: 'society',
@@ -20,9 +21,9 @@ const infrastructureModule: DomainModule = {
     indicators: [
       {
         id: 'internet_access',
-        label: { fr: 'Accès à internet', en: 'Internet access' },
+        label: { fr: 'Accès à internet', en: 'Internet access', es: 'Acceso a internet' },
         unit: 'percent',
-        unitLabel: { fr: '% population', en: '% population' },
+        unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 92, good: 80, fair: 60, poor: 35 },
@@ -31,9 +32,9 @@ const infrastructureModule: DomainModule = {
       },
       {
         id: 'logistics_performance',
-        label: { fr: 'Performance logistique (LPI)', en: 'Logistics performance (LPI)' },
+        label: { fr: 'Performance logistique (LPI)', en: 'Logistics performance (LPI)', es: 'Rendimiento logístico (LPI)' },
         unit: 'index',
-        unitLabel: { fr: 'indice /5', en: 'index /5' },
+        unitLabel: { fr: 'indice /5', en: 'index /5', es: 'índice /5' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 4.0, good: 3.5, fair: 3.0, poor: 2.5 },
@@ -42,9 +43,9 @@ const infrastructureModule: DomainModule = {
       },
       {
         id: 'electricity_access',
-        label: { fr: 'Accès à l\'électricité', en: 'Electricity access' },
+        label: { fr: 'Accès à l\'électricité', en: 'Electricity access', es: 'Acceso a la electricidad' },
         unit: 'percent',
-        unitLabel: { fr: '% population', en: '% population' },
+        unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 99, good: 95, fair: 85, poor: 70 },
@@ -53,9 +54,9 @@ const infrastructureModule: DomainModule = {
       },
       {
         id: 'road_quality',
-        label: { fr: 'Qualité des routes', en: 'Road quality' },
+        label: { fr: 'Qualité des routes', en: 'Road quality', es: 'Calidad de carreteras' },
         unit: 'index',
-        unitLabel: { fr: 'indice /7', en: 'index /7' },
+        unitLabel: { fr: 'indice /7', en: 'index /7', es: 'índice /7' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 5.8, good: 5.0, fair: 4.0, poor: 3.0 },

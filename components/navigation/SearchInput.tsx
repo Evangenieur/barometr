@@ -4,6 +4,8 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { Search, X } from 'lucide-react';
 import { getFlagUrl } from '@/lib/utils/flags';
 import { cn } from '@/lib/utils/cn';
+import { useNavigation } from '@/lib/context/NavigationContext';
+import { ui } from '@/lib/utils/i18n';
 
 interface Country {
   geoCode: string;
@@ -23,7 +25,8 @@ function normalize(str: string): string {
     .replace(/[\u0300-\u036f]/g, '');
 }
 
-export function SearchInput({ countries, onSelect, placeholder = 'Rechercher un pays…' }: SearchInputProps) {
+export function SearchInput({ countries, onSelect, placeholder }: SearchInputProps) {
+  const { locale } = useNavigation();
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -98,7 +101,7 @@ export function SearchInput({ countries, onSelect, placeholder = 'Rechercher un 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder}
+          placeholder={placeholder ?? ui('searchPlaceholder', locale)}
           className={cn(
             'w-full pl-8 pr-8 py-2 rounded-md text-sm',
             'bg-elevated border border-border-default',
@@ -116,7 +119,7 @@ export function SearchInput({ countries, onSelect, placeholder = 'Rechercher un 
           <button
             onClick={() => { setQuery(''); setOpen(false); inputRef.current?.focus(); }}
             className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-secondary"
-            aria-label="Effacer"
+            aria-label={ui('clear', locale)}
           >
             <X size={13} />
           </button>
@@ -162,7 +165,7 @@ export function SearchInput({ countries, onSelect, placeholder = 'Rechercher un 
 
       {open && query.trim().length > 0 && filtered.length === 0 && (
         <div className="absolute top-full left-0 right-0 mt-1 z-50 bg-overlay border border-border-default rounded-md shadow-lg px-3 py-2 text-sm text-text-muted">
-          Aucun résultat pour «&nbsp;{query}&nbsp;»
+          {ui('noResults', locale)} «&nbsp;{query}&nbsp;»
         </div>
       )}
     </div>

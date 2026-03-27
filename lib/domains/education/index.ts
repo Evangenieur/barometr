@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const educationModule: DomainModule = {
   definition: {
     id: 'education',
-    label: { fr: 'Éducation & Capital humain', en: 'Education & Human Capital' },
+    label: { fr: 'Éducation & Capital humain', en: 'Education & Human Capital', es: 'Educación y capital humano' },
     description: {
       fr: 'Performance éducative et investissement dans le capital humain : scores PISA, taux d\'enseignement supérieur, R&D et alphabétisation.',
       en: 'Educational performance and human capital investment: PISA scores, higher education rates, R&D and literacy.',
+      es: 'Rendimiento educativo e inversión en capital humano: puntuaciones PISA, tasas de educación superior, I+D y alfabetización.',
     },
     icon: '🎓',
     group: 'society',
@@ -19,9 +20,9 @@ const educationModule: DomainModule = {
     indicators: [
       {
         id: 'pisa_score',
-        label: { fr: 'Score PISA', en: 'PISA score' },
+        label: { fr: 'Score PISA', en: 'PISA score', es: 'Puntuación PISA' },
         unit: 'index',
-        unitLabel: { fr: 'points', en: 'points' },
+        unitLabel: { fr: 'points', en: 'points', es: 'puntos' },
         direction: 'higher_is_better',
         weight: 4,
         thresholds: { excellent: 520, good: 490, fair: 460, poor: 420 },
@@ -30,9 +31,9 @@ const educationModule: DomainModule = {
       },
       {
         id: 'higher_education_rate',
-        label: { fr: 'Taux d\'enseignement supérieur', en: 'Higher education rate' },
+        label: { fr: 'Taux d\'enseignement supérieur', en: 'Higher education rate', es: 'Tasa de educación superior' },
         unit: 'percent',
-        unitLabel: { fr: '% 25-64 ans', en: '% 25-64 yrs' },
+        unitLabel: { fr: '% 25-64 ans', en: '% 25-64 yrs', es: '% 25-64 años' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 55, good: 42, fair: 30, poor: 18 },
@@ -41,9 +42,9 @@ const educationModule: DomainModule = {
       },
       {
         id: 'r_and_d_gdp_share',
-        label: { fr: 'Dépenses R&D (% PIB)', en: 'R&D spending (% GDP)' },
+        label: { fr: 'Dépenses R&D (% PIB)', en: 'R&D spending (% GDP)', es: 'Gasto en I+D (% PIB)' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 3.0, good: 2.0, fair: 1.2, poor: 0.5 },
@@ -52,9 +53,9 @@ const educationModule: DomainModule = {
       },
       {
         id: 'literacy_rate',
-        label: { fr: 'Taux d\'alphabétisation', en: 'Literacy rate' },
+        label: { fr: 'Taux d\'alphabétisation', en: 'Literacy rate', es: 'Tasa de alfabetización' },
         unit: 'percent',
-        unitLabel: { fr: '%', en: '%' },
+        unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 99, good: 96, fair: 90, poor: 78 },

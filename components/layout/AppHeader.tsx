@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Share2, Info } from 'lucide-react';
 import { Toast } from '@/components/ui/Toast';
+import { useNavigation } from '@/lib/context/NavigationContext';
+import { ui } from '@/lib/utils/i18n';
 
 interface AppHeaderProps {
   onShareClick?: () => void;
@@ -27,6 +29,7 @@ function BarometrLogo() {
 }
 
 export function AppHeader({ onShareClick }: AppHeaderProps) {
+  const { locale } = useNavigation();
   const [showToast, setShowToast] = useState(false);
 
   const handleShare = async () => {
@@ -50,7 +53,7 @@ export function AppHeader({ onShareClick }: AppHeaderProps) {
           </span>
           <span className="hidden sm:block text-border-strong text-md">·</span>
           <span className="hidden sm:block text-text-muted text-sm truncate max-w-[240px]">
-            Observatoire mondial
+            {ui('observatory', locale)}
           </span>
         </div>
 
@@ -61,26 +64,26 @@ export function AppHeader({ onShareClick }: AppHeaderProps) {
           <Link
             href="/about"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-text-secondary hover:text-text-primary hover:bg-elevated transition-colors duration-100"
-            aria-label="À propos"
+            aria-label={ui('about', locale)}
           >
             <Info size={15} aria-hidden="true" />
-            <span className="hidden sm:inline">À propos</span>
+            <span className="hidden sm:inline">{ui('about', locale)}</span>
           </Link>
 
           <button
             onClick={handleShare}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-text-secondary hover:text-text-primary hover:bg-elevated transition-colors duration-100"
-            aria-label="Partager la vue courante"
+            aria-label={ui('share', locale)}
           >
             <Share2 size={15} aria-hidden="true" />
-            <span className="hidden sm:inline">Partager</span>
+            <span className="hidden sm:inline">{ui('share', locale)}</span>
           </button>
         </nav>
       </header>
 
       {showToast && (
         <Toast
-          message="Lien copié !"
+          message={ui('linkCopied', locale)}
           type="success"
           duration={2000}
           onDismiss={() => setShowToast(false)}

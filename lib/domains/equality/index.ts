@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const equalityModule: DomainModule = {
   definition: {
     id: 'equality',
-    label: { fr: 'Égalité & Inclusion', en: 'Equality & Inclusion' },
+    label: { fr: 'Égalité & Inclusion', en: 'Equality & Inclusion', es: 'Igualdad e Inclusión' },
     description: {
       fr: 'Égalité des genres et inclusion sociale : écart de genre, représentation politique des femmes, écart salarial et inégalités de genre.',
       en: 'Gender equality and social inclusion: gender gap, women\'s political representation, wage gap and gender inequality.',
+      es: 'Igualdad de género e inclusión social: brecha de género, representación política de las mujeres, brecha salarial y desigualdad de género.',
     },
     icon: '⚖️',
     group: 'society',
@@ -19,9 +20,9 @@ const equalityModule: DomainModule = {
     indicators: [
       {
         id: 'gender_gap_index',
-        label: { fr: "Indice d'écart de genre", en: 'Gender Gap Index' },
+        label: { fr: "Indice d'écart de genre", en: 'Gender Gap Index', es: 'Índice de brecha de género' },
         unit: 'index',
-        unitLabel: { fr: 'score', en: 'score' },
+        unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'higher_is_better',
         weight: 4,
         thresholds: { excellent: 0.80, good: 0.74, fair: 0.68, poor: 0.62 },
@@ -30,9 +31,9 @@ const equalityModule: DomainModule = {
       },
       {
         id: 'women_parliament',
-        label: { fr: 'Femmes au parlement', en: 'Women in parliament' },
+        label: { fr: 'Femmes au parlement', en: 'Women in parliament', es: 'Mujeres en el parlamento' },
         unit: 'percent',
-        unitLabel: { fr: '% sièges', en: '% seats' },
+        unitLabel: { fr: '% sièges', en: '% seats', es: '% escaños' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 40, good: 30, fair: 20, poor: 12 },
@@ -41,9 +42,9 @@ const equalityModule: DomainModule = {
       },
       {
         id: 'gender_wage_gap',
-        label: { fr: 'Écart salarial H/F', en: 'Gender wage gap' },
+        label: { fr: 'Écart salarial H/F', en: 'Gender wage gap', es: 'Brecha salarial de género' },
         unit: 'percent',
-        unitLabel: { fr: '%', en: '%' },
+        unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',
         weight: 2,
         thresholds: { excellent: 8, good: 14, fair: 20, poor: 28 },
@@ -52,9 +53,9 @@ const equalityModule: DomainModule = {
       },
       {
         id: 'gii_index',
-        label: { fr: "Indice d'inégalité de genre", en: 'Gender Inequality Index' },
+        label: { fr: "Indice d'inégalité de genre", en: 'Gender Inequality Index', es: 'Índice de desigualdad de género' },
         unit: 'index',
-        unitLabel: { fr: 'score', en: 'score' },
+        unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 0.05, good: 0.10, fair: 0.25, poor: 0.45 },

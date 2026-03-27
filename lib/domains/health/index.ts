@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const healthModule: DomainModule = {
   definition: {
     id: 'health',
-    label: { fr: 'Santé', en: 'Health' },
+    label: { fr: 'Santé', en: 'Health', es: 'Salud' },
     description: {
       fr: 'Mesure la performance des systèmes de santé nationaux via l\'espérance de vie, les dépenses, les infrastructures et la couverture universelle.',
       en: 'Measures national health system performance through life expectancy, spending, infrastructure and universal coverage.',
+      es: 'Mide el rendimiento de los sistemas de salud nacionales a través de la esperanza de vida, el gasto, la infraestructura y la cobertura universal.',
     },
     icon: '🏥',
     group: 'society',
@@ -20,9 +21,9 @@ const healthModule: DomainModule = {
     indicators: [
       {
         id: 'life_expectancy',
-        label: { fr: 'Espérance de vie', en: 'Life expectancy' },
+        label: { fr: 'Espérance de vie', en: 'Life expectancy', es: 'Esperanza de vida' },
         unit: 'years',
-        unitLabel: { fr: 'ans', en: 'years' },
+        unitLabel: { fr: 'ans', en: 'years', es: 'años' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 82, good: 76, fair: 70, poor: 64 },
@@ -31,9 +32,9 @@ const healthModule: DomainModule = {
       },
       {
         id: 'health_expenditure_gdp',
-        label: { fr: 'Dépenses santé (% PIB)', en: 'Health spending (% GDP)' },
+        label: { fr: 'Dépenses santé (% PIB)', en: 'Health spending (% GDP)', es: 'Gasto en salud (% PIB)' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 9, good: 6, fair: 4, poor: 2.5 },
@@ -42,9 +43,9 @@ const healthModule: DomainModule = {
       },
       {
         id: 'hospital_beds',
-        label: { fr: 'Lits d\'hôpital (pour 1 000 hab.)', en: 'Hospital beds (per 1,000)' },
+        label: { fr: 'Lits d\'hôpital (pour 1 000 hab.)', en: 'Hospital beds (per 1,000)', es: 'Camas de hospital (por 1.000 hab.)' },
         unit: 'ratio',
-        unitLabel: { fr: 'pour 1 000', en: 'per 1,000' },
+        unitLabel: { fr: 'pour 1 000', en: 'per 1,000', es: 'por 1.000' },
         direction: 'higher_is_better',
         weight: 1,
         thresholds: { excellent: 6, good: 4, fair: 2, poor: 1 },
@@ -53,9 +54,9 @@ const healthModule: DomainModule = {
       },
       {
         id: 'uhc_index',
-        label: { fr: 'Couverture santé universelle', en: 'UHC Index' },
+        label: { fr: 'Couverture santé universelle', en: 'UHC Index', es: 'Cobertura sanitaria universal' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 85, good: 72, fair: 57, poor: 42 },

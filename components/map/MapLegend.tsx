@@ -1,11 +1,15 @@
 'use client';
 
+import { ui } from '@/lib/utils/i18n';
+import type { Locale } from '@/lib/domains/types';
+
 interface MapLegendProps {
   mode: 'score' | 'raw';
   rawValueLabel?: string;
   rawMin?: number;
   rawMax?: number;
   className?: string;
+  locale?: Locale;
 }
 
 const SCORE_STOPS = [
@@ -21,7 +25,7 @@ function fmtVal(v: number): string {
   return v % 1 !== 0 ? v.toFixed(1) : String(Math.round(v));
 }
 
-export function MapLegend({ mode, rawValueLabel, rawMin, rawMax, className }: MapLegendProps) {
+export function MapLegend({ mode, rawValueLabel, rawMin, rawMax, className, locale = 'fr' }: MapLegendProps) {
   const isRaw = mode === 'raw' && rawMin !== undefined && rawMax !== undefined;
   const minLabel = isRaw ? fmtVal(rawMin) : '0';
   const maxLabel = isRaw ? fmtVal(rawMax) : '100';
@@ -33,7 +37,7 @@ export function MapLegend({ mode, rawValueLabel, rawMin, rawMax, className }: Ma
       aria-label="Légende de la carte"
     >
       <div className="text-2xs text-text-muted mb-1.5 font-medium uppercase tracking-wider">
-        {mode === 'raw' && rawValueLabel ? rawValueLabel : 'Score / 100'}
+        {mode === 'raw' && rawValueLabel ? rawValueLabel : ui('score100', locale)}
       </div>
 
       {/* Gradient bar */}
@@ -55,7 +59,7 @@ export function MapLegend({ mode, rawValueLabel, rawMin, rawMax, className }: Ma
       {/* No data indicator */}
       <div className="flex items-center gap-1.5 mt-1.5">
         <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#0A0F16', border: '1px solid #253447' }} />
-        <span className="text-2xs text-text-muted">Sans données</span>
+        <span className="text-2xs text-text-muted">{ui('noData', locale)}</span>
       </div>
     </div>
   );

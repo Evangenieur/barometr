@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const pensionsModule: DomainModule = {
   definition: {
     id: 'pensions',
-    label: { fr: 'Retraites', en: 'Pensions' },
+    label: { fr: 'Retraites', en: 'Pensions', es: 'Pensiones' },
     description: {
       fr: 'Viabilité des systèmes de retraite : taux de remplacement, dépendance démographique et capitalisation.',
       en: 'Pension system viability: replacement rate, demographic dependency and fund capitalisation.',
+      es: 'Viabilidad de los sistemas de pensiones: tasa de reemplazo, dependencia demográfica y capitalización.',
     },
     icon: '🏦',
     group: 'society',
@@ -18,9 +19,9 @@ const pensionsModule: DomainModule = {
     indicators: [
       {
         id: 'replacement_rate',
-        label: { fr: 'Taux de remplacement net', en: 'Net replacement rate' },
+        label: { fr: 'Taux de remplacement net', en: 'Net replacement rate', es: 'Tasa de reemplazo neta' },
         unit: 'percent',
-        unitLabel: { fr: '% du salaire', en: '% of salary' },
+        unitLabel: { fr: '% du salaire', en: '% of salary', es: '% del salario' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 75, good: 60, fair: 45, poor: 30 },
@@ -29,9 +30,9 @@ const pensionsModule: DomainModule = {
       },
       {
         id: 'old_age_dependency',
-        label: { fr: 'Ratio de dépendance vieillesse', en: 'Old-age dependency ratio' },
+        label: { fr: 'Ratio de dépendance vieillesse', en: 'Old-age dependency ratio', es: 'Ratio de dependencia de vejez' },
         unit: 'percent',
-        unitLabel: { fr: '%', en: '%' },
+        unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',
         weight: 2,
         thresholds: { excellent: 20, good: 30, fair: 40, poor: 50 },
@@ -40,9 +41,9 @@ const pensionsModule: DomainModule = {
       },
       {
         id: 'pension_assets_gdp',
-        label: { fr: 'Actifs fonds retraite / PIB', en: 'Pension fund assets / GDP' },
+        label: { fr: 'Actifs fonds retraite / PIB', en: 'Pension fund assets / GDP', es: 'Activos fondos de pensiones / PIB' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 100, good: 60, fair: 30, poor: 10 },

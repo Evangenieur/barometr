@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const commoditiesModule: DomainModule = {
   definition: {
     id: 'commodities',
-    label: { fr: 'Matières premières', en: 'Commodities' },
+    label: { fr: 'Matières premières', en: 'Commodities', es: 'Materias primas' },
     description: {
       fr: 'Dépendance et souveraineté sur les ressources naturelles : énergie, alimentation et sécurité des approvisionnements.',
       en: 'Dependence and sovereignty over natural resources: energy, food supply security and strategic reserves.',
+      es: 'Dependencia y soberanía sobre los recursos naturales: energía, seguridad alimentaria y reservas estratégicas.',
     },
     icon: '⛽',
     group: 'economy',
@@ -19,9 +20,9 @@ const commoditiesModule: DomainModule = {
     indicators: [
       {
         id: 'energy_import_dependence',
-        label: { fr: 'Dépendance énergétique importée', en: 'Energy import dependence' },
+        label: { fr: 'Dépendance énergétique importée', en: 'Energy import dependence', es: 'Dependencia energética importada' },
         unit: 'percent',
-        unitLabel: { fr: '% énergie importée', en: '% energy imported' },
+        unitLabel: { fr: '% énergie importée', en: '% energy imported', es: '% energía importada' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 15, good: 35, fair: 55, poor: 75 },
@@ -30,9 +31,9 @@ const commoditiesModule: DomainModule = {
       },
       {
         id: 'food_security_index',
-        label: { fr: 'Indice de sécurité alimentaire', en: 'Food security index' },
+        label: { fr: 'Indice de sécurité alimentaire', en: 'Food security index', es: 'Índice de seguridad alimentaria' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 4,
         thresholds: { excellent: 80, good: 65, fair: 48, poor: 30 },
@@ -41,9 +42,9 @@ const commoditiesModule: DomainModule = {
       },
       {
         id: 'critical_mineral_reserves',
-        label: { fr: 'Réserves minérales stratégiques', en: 'Strategic mineral reserves' },
+        label: { fr: 'Réserves minérales stratégiques', en: 'Strategic mineral reserves', es: 'Reservas minerales estratégicas' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 70, good: 50, fair: 30, poor: 15 },
@@ -52,9 +53,9 @@ const commoditiesModule: DomainModule = {
       },
       {
         id: 'commodity_export_ratio',
-        label: { fr: 'Exportations de matières premières (% export)', en: 'Commodity exports (% of exports)' },
+        label: { fr: 'Exportations de matières premières (% export)', en: 'Commodity exports (% of exports)', es: 'Exportaciones de materias primas (% export.)' },
         unit: 'percent',
-        unitLabel: { fr: '%', en: '%' },
+        unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'higher_is_better',
         weight: 1,
         thresholds: { excellent: 40, good: 25, fair: 15, poor: 5 },

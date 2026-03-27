@@ -2,11 +2,13 @@
 
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
-import type { Trend } from '@/lib/domains/types';
+import { ui } from '@/lib/utils/i18n';
+import type { Trend, Locale } from '@/lib/domains/types';
 
 interface TrendBadgeProps {
   trend: Trend;
   size?: 'sm' | 'md';
+  locale?: Locale;
 }
 
 const TREND_CONFIG: Record<Trend, { label: string; color: string; icon: typeof Minus | null }> = {
@@ -18,7 +20,7 @@ const TREND_CONFIG: Record<Trend, { label: string; color: string; icon: typeof M
   nodata: { label: '–',  color: '#64748B', icon: null         },
 };
 
-export function TrendBadge({ trend, size = 'sm' }: TrendBadgeProps) {
+export function TrendBadge({ trend, size = 'sm', locale = 'fr' }: TrendBadgeProps) {
   const config = TREND_CONFIG[trend];
   if (!config.icon) return null;
 
@@ -29,7 +31,7 @@ export function TrendBadge({ trend, size = 'sm' }: TrendBadgeProps) {
     <span
       className={cn('inline-flex items-center gap-0.5 font-mono', size === 'sm' ? 'text-xs' : 'text-sm')}
       style={{ color: config.color }}
-      title="Tendance sur 1 an"
+      title={ui('trendTitle', locale)}
     >
       <Icon size={iconSize} strokeWidth={2.5} aria-hidden="true" />
     </span>

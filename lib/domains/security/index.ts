@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const securityModule: DomainModule = {
   definition: {
     id: 'security',
-    label: { fr: 'Sécurité publique', en: 'Public Safety' },
+    label: { fr: 'Sécurité publique', en: 'Public Safety', es: 'Seguridad pública' },
     description: {
       fr: 'Sécurité intérieure : homicides, état de droit, stabilité politique et indice de paix.',
       en: 'Internal security: homicides, rule of law, political stability and peace index.',
+      es: 'Seguridad interior: homicidios, estado de derecho, estabilidad política e índice de paz.',
     },
     icon: '🛡️',
     group: 'security',
@@ -19,9 +20,9 @@ const securityModule: DomainModule = {
     indicators: [
       {
         id: 'homicide_rate',
-        label: { fr: 'Taux d\'homicides (pour 100k)', en: 'Homicide rate (per 100k)' },
+        label: { fr: 'Taux d\'homicides (pour 100k)', en: 'Homicide rate (per 100k)', es: 'Tasa de homicidios (por 100k)' },
         unit: 'ratio',
-        unitLabel: { fr: '/100 000', en: '/100,000' },
+        unitLabel: { fr: '/100 000', en: '/100,000', es: '/100.000' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 1.0, good: 2.5, fair: 5.0, poor: 10.0 },
@@ -30,9 +31,9 @@ const securityModule: DomainModule = {
       },
       {
         id: 'rule_of_law',
-        label: { fr: 'État de droit', en: 'Rule of law' },
+        label: { fr: 'État de droit', en: 'Rule of law', es: 'Estado de derecho' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 80, good: 65, fair: 45, poor: 28 },
@@ -41,9 +42,9 @@ const securityModule: DomainModule = {
       },
       {
         id: 'political_stability',
-        label: { fr: 'Stabilité politique', en: 'Political stability' },
+        label: { fr: 'Stabilité politique', en: 'Political stability', es: 'Estabilidad política' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 80, good: 62, fair: 42, poor: 25 },
@@ -52,9 +53,9 @@ const securityModule: DomainModule = {
       },
       {
         id: 'global_peace_index',
-        label: { fr: 'Indice de paix mondial', en: 'Global peace index' },
+        label: { fr: 'Indice de paix mondial', en: 'Global peace index', es: 'Índice de paz mundial' },
         unit: 'index',
-        unitLabel: { fr: 'indice /100', en: 'index /100' },
+        unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 80, good: 68, fair: 52, poor: 35 },

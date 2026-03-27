@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const wellbeingModule: DomainModule = {
   definition: {
     id: 'wellbeing',
-    label: { fr: 'Bien-être', en: 'Wellbeing' },
+    label: { fr: 'Bien-être', en: 'Wellbeing', es: 'Bienestar' },
     description: {
       fr: 'Qualité de vie subjective et objective : satisfaction, santé mentale, équilibre vie professionnelle/personnelle et soutien social.',
       en: 'Subjective and objective quality of life: satisfaction, mental health, work-life balance and social support.',
+      es: 'Calidad de vida subjetiva y objetiva: satisfacción, salud mental, equilibrio vida laboral/personal y apoyo social.',
     },
     icon: '😊',
     group: 'society',
@@ -19,9 +20,9 @@ const wellbeingModule: DomainModule = {
     indicators: [
       {
         id: 'life_satisfaction',
-        label: { fr: 'Satisfaction de vie', en: 'Life satisfaction' },
+        label: { fr: 'Satisfaction de vie', en: 'Life satisfaction', es: 'Satisfacción con la vida' },
         unit: 'index',
-        unitLabel: { fr: 'score /10', en: 'score /10' },
+        unitLabel: { fr: 'score /10', en: 'score /10', es: 'score /10' },
         direction: 'higher_is_better',
         weight: 4,
         thresholds: { excellent: 7.5, good: 6.5, fair: 5.5, poor: 4.5 },
@@ -30,9 +31,9 @@ const wellbeingModule: DomainModule = {
       },
       {
         id: 'mental_health_disorders',
-        label: { fr: 'Troubles de santé mentale', en: 'Mental health disorders' },
+        label: { fr: 'Troubles de santé mentale', en: 'Mental health disorders', es: 'Trastornos de salud mental' },
         unit: 'percent',
-        unitLabel: { fr: '% population', en: '% population' },
+        unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 12, good: 16, fair: 20, poor: 25 },
@@ -41,9 +42,9 @@ const wellbeingModule: DomainModule = {
       },
       {
         id: 'work_life_balance',
-        label: { fr: 'Équilibre vie pro/perso', en: 'Work-life balance' },
+        label: { fr: 'Équilibre vie pro/perso', en: 'Work-life balance', es: 'Equilibrio vida laboral/personal' },
         unit: 'index',
-        unitLabel: { fr: 'score /100', en: 'score /100' },
+        unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 78, good: 65, fair: 50, poor: 35 },
@@ -52,9 +53,9 @@ const wellbeingModule: DomainModule = {
       },
       {
         id: 'social_support',
-        label: { fr: 'Soutien social', en: 'Social support' },
+        label: { fr: 'Soutien social', en: 'Social support', es: 'Apoyo social' },
         unit: 'index',
-        unitLabel: { fr: 'score /100', en: 'score /100' },
+        unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 90, good: 80, fair: 70, poor: 55 },

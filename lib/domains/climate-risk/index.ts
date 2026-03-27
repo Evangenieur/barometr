@@ -3,10 +3,11 @@ import type { DomainModule } from '@/lib/domains/types';
 const climateRiskModule: DomainModule = {
   definition: {
     id: 'climate-risk',
-    label: { fr: 'Risque climatique', en: 'Climate Risk' },
+    label: { fr: 'Risque climatique', en: 'Climate Risk', es: 'Riesgo climático' },
     description: {
       fr: 'Exposition aux risques climatiques : vulnérabilité, préparation, catastrophes naturelles et adaptation au changement climatique.',
       en: 'Exposure to climate risks: vulnerability, readiness, natural disasters and climate change adaptation.',
+      es: 'Exposición a riesgos climáticos: vulnerabilidad, preparación, desastres naturales y adaptación al cambio climático.',
     },
     icon: '🌡️',
     group: 'environment',
@@ -19,9 +20,9 @@ const climateRiskModule: DomainModule = {
     indicators: [
       {
         id: 'nd_gain_readiness',
-        label: { fr: 'Préparation climatique', en: 'Climate readiness' },
+        label: { fr: 'Préparation climatique', en: 'Climate readiness', es: 'Preparación climática' },
         unit: 'index',
-        unitLabel: { fr: 'score', en: 'score' },
+        unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'higher_is_better',
         weight: 3,
         thresholds: { excellent: 0.65, good: 0.50, fair: 0.38, poor: 0.25 },
@@ -30,9 +31,9 @@ const climateRiskModule: DomainModule = {
       },
       {
         id: 'climate_vulnerability',
-        label: { fr: 'Vulnérabilité climatique', en: 'Climate vulnerability' },
+        label: { fr: 'Vulnérabilité climatique', en: 'Climate vulnerability', es: 'Vulnerabilidad climática' },
         unit: 'index',
-        unitLabel: { fr: 'score', en: 'score' },
+        unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'lower_is_better',
         weight: 3,
         thresholds: { excellent: 0.30, good: 0.38, fair: 0.45, poor: 0.55 },
@@ -41,9 +42,9 @@ const climateRiskModule: DomainModule = {
       },
       {
         id: 'natural_disaster_deaths',
-        label: { fr: 'Décès catastrophes naturelles', en: 'Natural disaster deaths' },
+        label: { fr: 'Décès catastrophes naturelles', en: 'Natural disaster deaths', es: 'Muertes por desastres naturales' },
         unit: 'ratio',
-        unitLabel: { fr: 'décès/M hab.', en: 'deaths/M pop.' },
+        unitLabel: { fr: 'décès/M hab.', en: 'deaths/M pop.', es: 'muertes/M hab.' },
         direction: 'lower_is_better',
         weight: 2,
         thresholds: { excellent: 0.5, good: 2, fair: 8, poor: 25 },
@@ -52,9 +53,9 @@ const climateRiskModule: DomainModule = {
       },
       {
         id: 'climate_adaptation_spending',
-        label: { fr: 'Dépenses adaptation climat', en: 'Climate adaptation spending' },
+        label: { fr: 'Dépenses adaptation climat', en: 'Climate adaptation spending', es: 'Gasto en adaptación climática' },
         unit: 'percent',
-        unitLabel: { fr: '% PIB', en: '% GDP' },
+        unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
         weight: 2,
         thresholds: { excellent: 0.5, good: 0.3, fair: 0.15, poor: 0.05 },

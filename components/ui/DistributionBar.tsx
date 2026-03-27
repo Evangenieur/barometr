@@ -9,15 +9,15 @@ interface DistributionBarProps {
   total: number;
   activeSegment?: 'excellent' | 'good' | 'fair' | 'poor' | 'critical' | null;
   onSegmentHover?: (segment: string | null) => void;
-  locale?: 'fr' | 'en';
+  locale?: 'fr' | 'en' | 'es';
 }
 
 const SEGMENTS = [
-  { key: 'excellent' as const, color: '#22C55E', label: { fr: 'Excellent', en: 'Excellent' } },
-  { key: 'good'      as const, color: '#84CC16', label: { fr: 'Bon',       en: 'Good'      } },
-  { key: 'fair'      as const, color: '#EAB308', label: { fr: 'Passable',  en: 'Fair'      } },
-  { key: 'poor'      as const, color: '#F97316', label: { fr: 'Faible',    en: 'Poor'      } },
-  { key: 'critical'  as const, color: '#EF4444', label: { fr: 'Critique',  en: 'Critical'  } },
+  { key: 'excellent' as const, color: '#22C55E', label: { fr: 'Excellent', en: 'Excellent', es: 'Excelente'  } },
+  { key: 'good'      as const, color: '#84CC16', label: { fr: 'Bon',       en: 'Good',      es: 'Bueno'      } },
+  { key: 'fair'      as const, color: '#EAB308', label: { fr: 'Passable',  en: 'Fair',      es: 'Regular'    } },
+  { key: 'poor'      as const, color: '#F97316', label: { fr: 'Faible',    en: 'Poor',      es: 'Bajo'       } },
+  { key: 'critical'  as const, color: '#EF4444', label: { fr: 'Critique',  en: 'Critical',  es: 'Crítico'    } },
 ];
 
 export function DistributionBar({

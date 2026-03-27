@@ -21,12 +21,14 @@ import {
 import { getDomain } from '@/lib/domains/registry';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
+import { ui } from '@/lib/utils/i18n';
 
 // ─── Inner app (uses NavigationContext) ───────────────────────────────────────
 
 function MapAppInner() {
   const { nav, setDomain, setIndicator, setCountry, locale } = useNavigation();
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [isMobileStatsOpen, setMobileStatsOpen] = useState(false);
 
   // Track which right panel is active: 'stats' or 'country'
   type RightPanel = 'stats' | 'country' | null;
@@ -170,20 +172,34 @@ function MapAppInner() {
           <div className="absolute bottom-8 left-4 z-10">
             <MapLegend
               mode={nav.indicatorId !== null ? 'raw' : 'score'}
+              locale={locale}
               {...(rawValueLabel !== undefined ? { rawValueLabel } : {})}
               {...(rawMin !== undefined ? { rawMin } : {})}
               {...(rawMax !== undefined ? { rawMax } : {})}
             />
           </div>
 
-          {/* Mobile sidebar toggle */}
-          <button
-            className="md:hidden absolute bottom-8 right-4 z-10 bg-surface border border-border-default rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-text-primary"
-            onClick={() => setMobileSidebarOpen((v) => !v)}
-            aria-label="Ouvrir la navigation"
-          >
-            <span className="text-lg" aria-hidden="true">≡</span>
-          </button>
+          {/* Mobile buttons */}
+          <div className="md:hidden absolute bottom-8 right-4 z-10 flex flex-col gap-3">
+            {/* Stats button — only shown when a domain or indicator is active */}
+            {(nav.domainId !== null) && (
+              <button
+                className="bg-surface border border-border-default rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-text-primary"
+                onClick={() => setMobileStatsOpen(true)}
+                aria-label={ui('worldStats', locale)}
+              >
+                <span className="text-lg" aria-hidden="true">📊</span>
+              </button>
+            )}
+            {/* Sidebar toggle */}
+            <button
+              className="bg-surface border border-border-default rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-text-primary"
+              onClick={() => setMobileSidebarOpen((v) => !v)}
+              aria-label={ui('openNav', locale)}
+            >
+              <span className="text-lg" aria-hidden="true">≡</span>
+            </button>
+          </div>
         </div>
 
         {/* Right panel — single slot, same width */}
@@ -194,23 +210,23 @@ function MapAppInner() {
                 <div className="p-3 border-b border-border-subtle flex items-center justify-between">
                   <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
                     {statsMode === 'global'
-                      ? 'Statistiques mondiales'
+                      ? ui('worldStats', locale)
                       : statsMode === 'domain'
                       ? (() => {
                           const mod = nav.domainId ? getDomain(nav.domainId) : null;
                           const name = mod?.definition.label[locale] ?? mod?.definition.label['en'];
-                          return name ? `${name}` : 'Statistiques domaine';
+                          return name ?? ui('worldStats', locale);
                         })()
                       : (() => {
                           const mod = nav.domainId ? getDomain(nav.domainId) : null;
                           const name = mod?.definition.label[locale] ?? mod?.definition.label['en'];
-                          return name ? `${name} — indicateur` : 'Statistiques indicateur';
+                          return name ? `${name} — ${ui('indicator', locale).toLowerCase()}` : ui('worldStats', locale);
                         })()}
                   </h2>
                   <button
                     onClick={() => setRightPanel(null)}
                     className="text-text-muted hover:text-text-primary transition-colors"
-                    aria-label="Fermer"
+                    aria-label={ui('close', locale)}
                   >
                     <X size={16} />
                   </button>
@@ -270,16 +286,57 @@ function MapAppInner() {
           </div>
         )}
 
+        {/* Mobile stats panel — full-screen overlay */}
+        {isMobileStatsOpen && stats && (
+          <div className="lg:hidden fixed inset-0 z-40 bg-surface overflow-y-auto animate-slide-in-right">
+            <div className="p-3 border-b border-border-subtle flex items-center justify-between">
+              <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                {statsMode === 'global'
+                  ? ui('worldStats', locale)
+                  : statsMode === 'domain'
+                  ? (() => {
+                      const mod = nav.domainId ? getDomain(nav.domainId) : null;
+                      const name = mod?.definition.label[locale] ?? mod?.definition.label['en'];
+                      return name ?? ui('worldStats', locale);
+                    })()
+                  : (() => {
+                      const mod = nav.domainId ? getDomain(nav.domainId) : null;
+                      const name = mod?.definition.label[locale] ?? mod?.definition.label['en'];
+                      return name ? `${name} — ${ui('indicator', locale).toLowerCase()}` : ui('worldStats', locale);
+                    })()}
+              </h2>
+              <button
+                onClick={() => setMobileStatsOpen(false)}
+                className="text-text-muted hover:text-text-primary transition-colors"
+                aria-label={ui('close', locale)}
+              >
+                <X size={16} />
+              </button>
+            </div>
+            <GlobalStatsPanel
+              stats={stats}
+              mode={statsMode}
+              locale={locale}
+              rankedCountries={rankedCountries}
+              activeCountryCode={nav.countryCode}
+              onCountrySelect={(code, name) => { handleCountrySelect(code, name); setMobileStatsOpen(false); }}
+              activeIndicatorId={nav.indicatorId}
+              onClose={() => setMobileStatsOpen(false)}
+              {...(rawValueLabel !== undefined ? { rawUnit: rawValueLabel } : {})}
+            />
+          </div>
+        )}
+
         {/* Mobile left panel */}
         {isMobileSidebarOpen && (
           <div className="md:hidden fixed inset-0 z-40 flex flex-row">
             <div className="relative bg-surface border-r border-border-default w-72 max-w-[85vw] h-full overflow-y-auto animate-slide-in-left flex flex-col">
               <div className="flex items-center justify-between p-3 border-b border-border-subtle flex-shrink-0">
-                <span className="text-sm font-semibold text-text-primary">Domaines</span>
+                <span className="text-sm font-semibold text-text-primary">{ui('domains', locale)}</span>
                 <button
                   onClick={() => setMobileSidebarOpen(false)}
                   className="text-text-muted hover:text-text-primary"
-                  aria-label="Fermer"
+                  aria-label={ui('close', locale)}
                 >
                   ✕
                 </button>
@@ -287,8 +344,8 @@ function MapAppInner() {
               <DomainSidebar
                 activeDomainId={nav.domainId}
                 activeIndicatorId={nav.indicatorId}
-                onDomainSelect={(id) => { setDomain(id); }}
-                onIndicatorSelect={(id) => { setIndicator(id); setMobileSidebarOpen(false); }}
+                onDomainSelect={(id) => { setDomain(id); setMobileSidebarOpen(false); setMobileStatsOpen(true); }}
+                onIndicatorSelect={(id) => { setIndicator(id); setMobileSidebarOpen(false); setMobileStatsOpen(true); }}
                 onCountrySelect={(code, name) => { handleCountrySelect(code, name); setMobileSidebarOpen(false); }}
                 locale={locale}
               />
