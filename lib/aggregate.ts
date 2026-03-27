@@ -329,21 +329,48 @@ export function getRankedCountries(
   domainId: string | null,
   indicatorId: string | null
 ): Array<{ geoCode: string; geoName: string; score: number; rank: number; rawValue?: number }> {
+  // When ranking by indicator, compute a precise (non-rounded) score for accurate sorting
+  let preciseScores: Map<string, number> | undefined;
+  let indicatorDirection: 'higher_is_better' | 'lower_is_better' | undefined;
+  if (indicatorId !== null) {
+    preciseScores = new Map();
+    for (const mod of DOMAIN_REGISTRY.values()) {
+      const ind = mod.definition.indicators.find((i) => i.id === indicatorId);
+      if (ind) {
+        indicatorDirection = ind.direction;
+        for (const entry of mod.seedData) {
+          const raw = entry.values[indicatorId];
+          if (raw !== undefined) {
+            preciseScores.set(entry.geoCode, computeScore(raw, ind));
+          }
+        }
+        break;
+      }
+    }
+  }
+
   const scored = AGGREGATE_DATA.map((agg) => {
     let score: number;
     let rawValue: number | undefined;
+    let preciseScore: number | undefined;
     if (indicatorId !== null) {
       score = agg.indicatorScores[indicatorId] ?? -1;
       rawValue = agg.rawValues[indicatorId];
+      preciseScore = preciseScores?.get(agg.geoCode);
     } else if (domainId !== null) {
       score = agg.domainScores[domainId] ?? -1;
     } else {
       score = agg.globalScore;
     }
-    return { geoCode: agg.geoCode, geoName: agg.geoName, score, rawValue };
+    return { geoCode: agg.geoCode, geoName: agg.geoName, score, rawValue, preciseScore };
   });
 
-  const withData = scored.filter((e) => e.score !== -1).sort((a, b) => b.score - a.score);
+  const withData = scored.filter((e) => e.score !== -1).sort((a, b) => {
+    // Use precise score when available for accurate indicator ranking
+    const sa = a.preciseScore ?? a.score;
+    const sb = b.preciseScore ?? b.score;
+    return sb - sa;
+  });
   return withData.map((e, i) => {
     const entry: { geoCode: string; geoName: string; score: number; rank: number; rawValue?: number } = {
       geoCode: e.geoCode,
