@@ -1,0 +1,65 @@
+/**
+ * Generate OG image as SVG → convert to PNG via sharp or canvas
+ * Run: node scripts/generate-og-image.mjs
+ */
+import { writeFileSync } from 'fs';
+
+const WIDTH = 1200;
+const HEIGHT = 630;
+
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0F16"/>
+      <stop offset="50%" style="stop-color:#111927"/>
+      <stop offset="100%" style="stop-color:#0A0F16"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="600" y="240" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="80" font-weight="800" fill="#E2EBF5" letter-spacing="-2">
+    Barometr
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="300" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#8899AA">
+    World socio-economic indicators as weather scores
+  </text>
+
+  <!-- Stats -->
+  <rect x="280" y="360" width="640" height="90" rx="12" fill="#111927" stroke="#253447" stroke-width="1"/>
+
+  <text x="420" y="405" text-anchor="middle" font-family="monospace" font-size="36" font-weight="700" fill="#3D8EF0">18</text>
+  <text x="420" y="432" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#8899AA">Domains</text>
+
+  <text x="600" y="405" text-anchor="middle" font-family="monospace" font-size="36" font-weight="700" fill="#3D8EF0">73</text>
+  <text x="600" y="432" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#8899AA">Indicators</text>
+
+  <text x="780" y="405" text-anchor="middle" font-family="monospace" font-size="36" font-weight="700" fill="#3D8EF0">150+</text>
+  <text x="780" y="432" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#8899AA">Countries</text>
+
+  <!-- Weather icons as text -->
+  <text x="360" y="170" text-anchor="middle" font-size="44">⛈️</text>
+  <text x="450" y="170" text-anchor="middle" font-size="44">🌧️</text>
+  <text x="540" y="170" text-anchor="middle" font-size="44">⛅️</text>
+  <text x="630" y="170" text-anchor="middle" font-size="44">🌤️</text>
+  <text x="720" y="170" text-anchor="middle" font-size="44">☀️</text>
+  <text x="810" y="170" text-anchor="middle" font-size="44">🌍</text>
+
+  <!-- Color bar at bottom -->
+  <rect x="0" y="624" width="240" height="6" fill="#EF4444"/>
+  <rect x="240" y="624" width="240" height="6" fill="#F97316"/>
+  <rect x="480" y="624" width="240" height="6" fill="#EAB308"/>
+  <rect x="720" y="624" width="240" height="6" fill="#84CC16"/>
+  <rect x="960" y="624" width="240" height="6" fill="#22C55E"/>
+</svg>`;
+
+writeFileSync('public/og-image.svg', svg);
+console.log('Generated public/og-image.svg');
+
+// Also write a simple HTML version for reference
+console.log('To convert to PNG, open public/og-image.svg in a browser and screenshot, or use:');
+console.log('  npx @vercel/og-image (or any SVG→PNG tool)');

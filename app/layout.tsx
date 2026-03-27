@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     'Explorez et comparez les pays du monde sur des dimensions sociales, économiques et environnementales grâce à des scores météo lisibles.',
   openGraph: {
     title: 'Barometr',
-    description: 'Observatoire mondial des équilibres socio-économiques',
+    description: 'World socio-economic indicators visualized as weather scores',
     type: 'website',
-    images: [`${basePath}/og-image.png`],
+    images: [{ url: `${basePath}/og-image.png`, width: 1200, height: 630, alt: 'Barometr' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Barometr',
-    description: 'Observatoire mondial des équilibres socio-économiques',
+    description: 'World socio-economic indicators visualized as weather scores',
     images: [`${basePath}/og-image.png`],
   },
 };
