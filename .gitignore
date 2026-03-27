@@ -1,0 +1,32 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Production
+/out
+/.next
+
+# Misc
+.DS_Store
+*.pem
+.env*.local
+.env
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+dev.log
+tunnel.log
+.claude/settings.local.json
+.claude/launch.json
+.claude/plans/
+.claude/projects/
+
+.vercel
