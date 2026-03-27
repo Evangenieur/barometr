@@ -365,9 +365,5 @@ function MapAppInner() {
 // ─── Public export ────────────────────────────────────────────────────────────
 
 export default function MapApp() {
-  return (
-    <NavigationProvider>
-      <MapAppInner />
-    </NavigationProvider>
-  );
+  return <MapAppInner />;
 }
