@@ -57,7 +57,7 @@ export function DomainSidebar({
 
   return (
     <aside
-      className="w-64 flex-shrink-0 h-full flex flex-col bg-surface border-r border-border-subtle overflow-hidden"
+      className="w-full md:w-64 flex-shrink-0 h-full flex flex-col bg-surface border-r border-border-subtle overflow-hidden"
       aria-label="Navigation domaines"
     >
       {/* Search */}

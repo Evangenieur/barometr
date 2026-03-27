@@ -329,31 +329,24 @@ function MapAppInner() {
 
         {/* Mobile left panel */}
         {isMobileSidebarOpen && (
-          <div className="md:hidden fixed inset-0 z-40 flex flex-row">
-            <div className="relative bg-surface border-r border-border-default w-72 max-w-[85vw] h-full overflow-y-auto animate-slide-in-left flex flex-col">
-              <div className="flex items-center justify-between p-3 border-b border-border-subtle flex-shrink-0">
-                <span className="text-sm font-semibold text-text-primary">{ui('domains', locale)}</span>
-                <button
-                  onClick={() => setMobileSidebarOpen(false)}
-                  className="text-text-muted hover:text-text-primary"
-                  aria-label={ui('close', locale)}
-                >
-                  ✕
-                </button>
-              </div>
-              <DomainSidebar
-                activeDomainId={nav.domainId}
-                activeIndicatorId={nav.indicatorId}
-                onDomainSelect={(id) => { setDomain(id); setMobileSidebarOpen(false); setMobileStatsOpen(true); }}
-                onIndicatorSelect={(id) => { setIndicator(id); setMobileSidebarOpen(false); setMobileStatsOpen(true); }}
-                onCountrySelect={(code, name) => { handleCountrySelect(code, name); setMobileSidebarOpen(false); }}
-                locale={locale}
-              />
+          <div className="md:hidden fixed inset-y-0 left-0 z-40 w-72 max-w-[85vw] bg-surface border-r border-border-default overflow-y-auto animate-slide-in-left flex flex-col">
+            <div className="flex items-center justify-between p-3 border-b border-border-subtle flex-shrink-0">
+              <span className="text-sm font-semibold text-text-primary">{ui('domains', locale)}</span>
+              <button
+                onClick={() => setMobileSidebarOpen(false)}
+                className="text-text-muted hover:text-text-primary"
+                aria-label={ui('close', locale)}
+              >
+                ✕
+              </button>
             </div>
-            <div
-              className="flex-1 bg-void/70"
-              onClick={() => setMobileSidebarOpen(false)}
-              aria-hidden="true"
+            <DomainSidebar
+              activeDomainId={nav.domainId}
+              activeIndicatorId={nav.indicatorId}
+              onDomainSelect={(id) => { setDomain(id); }}
+              onIndicatorSelect={(id) => { setIndicator(id); if (id !== null) setMobileSidebarOpen(false); }}
+              onCountrySelect={(code, name) => { handleCountrySelect(code, name); setMobileSidebarOpen(false); }}
+              locale={locale}
             />
           </div>
         )}
