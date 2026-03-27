@@ -80,11 +80,11 @@ export function getWeatherBand(score: number): WeatherBand {
 }
 
 export const WEATHER_CONFIG: Record<WeatherBand, { emoji: string; color: string; bgColor: string; labelFr: string; labelEn: string }> = {
-  excellent: { emoji: '☀️',  color: '#22C55E', bgColor: '#22C55E1A', labelFr: 'Excellent',    labelEn: 'Excellent'  },
-  good:      { emoji: '🌤',  color: '#84CC16', bgColor: '#84CC161A', labelFr: 'Bon',           labelEn: 'Good'       },
-  fair:      { emoji: '⛅',  color: '#EAB308', bgColor: '#EAB3081A', labelFr: 'Passable',      labelEn: 'Fair'       },
-  poor:      { emoji: '🌧',  color: '#F97316', bgColor: '#F973161A', labelFr: 'Faible',        labelEn: 'Poor'       },
-  critical:  { emoji: '⛈',  color: '#EF4444', bgColor: '#EF44441A', labelFr: 'Critique',      labelEn: 'Critical'   },
+  excellent: { emoji: '☀️',   color: '#22C55E', bgColor: '#22C55E1A', labelFr: 'Excellent',    labelEn: 'Excellent'  },
+  good:      { emoji: '🌤️',  color: '#84CC16', bgColor: '#84CC161A', labelFr: 'Bon',           labelEn: 'Good'       },
+  fair:      { emoji: '⛅️',  color: '#EAB308', bgColor: '#EAB3081A', labelFr: 'Passable',      labelEn: 'Fair'       },
+  poor:      { emoji: '🌧️',  color: '#F97316', bgColor: '#F973161A', labelFr: 'Faible',        labelEn: 'Poor'       },
+  critical:  { emoji: '⛈️',  color: '#EF4444', bgColor: '#EF44441A', labelFr: 'Critique',      labelEn: 'Critical'   },
   nodata:    { emoji: '—',   color: '#3A4A5C', bgColor: '#3A4A5C1A', labelFr: 'Sans données',  labelEn: 'No data'    },
 };
 

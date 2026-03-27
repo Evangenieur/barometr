@@ -244,10 +244,10 @@ export default function AboutPage() {
 
   const weatherRows = [
     { range: '80–100', emoji: '☀️',  labelKey: 'labelExcellent', color: '#22C55E' },
-    { range: '60–79',  emoji: '🌤',  labelKey: 'labelGood',      color: '#84CC16' },
-    { range: '40–59',  emoji: '⛅',  labelKey: 'labelFair',      color: '#EAB308' },
-    { range: '20–39',  emoji: '🌧',  labelKey: 'labelPoor',      color: '#F97316' },
-    { range: '0–19',   emoji: '⛈',  labelKey: 'labelCritical',  color: '#EF4444' },
+    { range: '60–79',  emoji: '🌤️',  labelKey: 'labelGood',      color: '#84CC16' },
+    { range: '40–59',  emoji: '⛅️',  labelKey: 'labelFair',      color: '#EAB308' },
+    { range: '20–39',  emoji: '🌧️',  labelKey: 'labelPoor',      color: '#F97316' },
+    { range: '0–19',   emoji: '⛈️',  labelKey: 'labelCritical',  color: '#EF4444' },
   ];
 
   const steps = [
