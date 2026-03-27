@@ -28,8 +28,11 @@ function BarometrLogo() {
   );
 }
 
+const LOCALE_FLAGS: Record<string, string> = { fr: '🇫🇷', en: '🇬🇧', es: '🇪🇸' };
+const LOCALE_ORDER = ['fr', 'en', 'es'] as const;
+
 export function AppHeader({ onShareClick }: AppHeaderProps) {
-  const { locale } = useNavigation();
+  const { locale, setLocale } = useNavigation();
   const [showToast, setShowToast] = useState(false);
 
   const handleShare = async () => {
@@ -78,6 +81,24 @@ export function AppHeader({ onShareClick }: AppHeaderProps) {
             <Share2 size={15} aria-hidden="true" />
             <span className="hidden sm:inline">{ui('share', locale)}</span>
           </button>
+
+          {/* Language switcher */}
+          <div className="flex items-center gap-0.5 ml-1">
+            {LOCALE_ORDER.map((loc) => (
+              <button
+                key={loc}
+                onClick={() => setLocale(loc)}
+                className={`px-1.5 py-1 rounded text-xs transition-colors ${
+                  locale === loc
+                    ? 'bg-elevated text-text-primary'
+                    : 'text-text-muted hover:text-text-primary hover:bg-elevated/50'
+                }`}
+                aria-label={loc.toUpperCase()}
+              >
+                {LOCALE_FLAGS[loc]}
+              </button>
+            ))}
+          </div>
         </nav>
       </header>
 
