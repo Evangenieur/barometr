@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://barometr.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://barometr.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
