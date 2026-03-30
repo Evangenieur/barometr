@@ -23,6 +23,7 @@ import digitalModule from '@/lib/domains/digital';
 import equalityModule from '@/lib/domains/equality';
 import waterBiodiversityModule from '@/lib/domains/water-biodiversity';
 import climateRiskModule from '@/lib/domains/climate-risk';
+import marketStressModule from '@/lib/domains/market-stress';
 
 // ─── Domain groups ────────────────────────────────────────────────────────────
 
@@ -50,6 +51,7 @@ const ALL_DOMAIN_MODULES: DomainModule[] = [
   fiscalModule,
   economicSectorsModule,
   commoditiesModule,
+  marketStressModule,
   // Security
   corruptionModule,
   securityModule,
