@@ -88,8 +88,54 @@ export function GlobalStatsPanel({
     ? ui('domainAvg', locale)
     : ui('indicatorAvg', locale);
 
+  // Indicator metadata (description, year, sources)
+  const indicatorMeta = (() => {
+    if (mode !== 'indicator' || !activeIndicatorId) return null;
+    const mod = getDomainForIndicator(activeIndicatorId);
+    if (!mod) return null;
+    const ind = mod.definition.indicators.find((i) => i.id === activeIndicatorId);
+    if (!ind) return null;
+    const description = mod.definition.description[locale] ?? mod.definition.description['en'];
+    const dataYear = mod.seedData[0]?.dataYear;
+    const sources = mod.definition.seedSources ?? [];
+    return { ind, description, dataYear, sources };
+  })();
+
   return (
     <div className="flex flex-col gap-4 px-3 py-3">
+      {/* Indicator info card */}
+      {indicatorMeta && (
+        <div className="rounded-md border border-border-subtle bg-elevated/30 p-2.5 flex flex-col gap-1.5">
+          <div className="text-xs font-medium text-text-primary">
+            {indicatorMeta.ind.label[locale] ?? indicatorMeta.ind.label['en']}
+          </div>
+          {indicatorMeta.description && (
+            <p className="text-2xs text-text-muted leading-relaxed italic">
+              {indicatorMeta.description}
+            </p>
+          )}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 mt-0.5">
+            {indicatorMeta.dataYear && (
+              <span className="text-2xs text-text-muted">
+                {ui('data', locale)} {indicatorMeta.dataYear}
+              </span>
+            )}
+            {indicatorMeta.sources.map((url) => (
+              <a
+                key={url}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-0.5 text-2xs text-accent-blue hover:underline"
+              >
+                {getSourceLabel(url)}
+                <ExternalLink size={9} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Score mondial */}
       <div className="text-center">
         <div className="text-xs text-text-muted mb-1">{label}</div>
