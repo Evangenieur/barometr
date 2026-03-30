@@ -21,7 +21,11 @@ const waterBiodiversityModule: DomainModule = {
     indicators: [
       {
         id: 'safe_water_access',
-        label: { fr: 'Acc\u00e8s eau potable', en: 'Safe water access', es: 'Acceso a agua potable' },
+        label: { fr: 'Accès eau potable', en: 'Safe water access', es: 'Acceso a agua potable' },
+        description: {
+          fr: "Part de la population ayant accès à des services d'eau potable gérés en toute sécurité à domicile (OMS/UNICEF)",
+          en: 'Share of the population with access to safely managed drinking water services at home (WHO/UNICEF)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% pop.', en: '% pop.', es: '% pob.' },
         direction: 'higher_is_better',
@@ -33,6 +37,10 @@ const waterBiodiversityModule: DomainModule = {
       {
         id: 'water_stress',
         label: { fr: 'Stress hydrique', en: 'Water stress', es: 'Estrés hídrico' },
+        description: {
+          fr: "Part des ressources en eau douce renouvelables prélevées annuellement pour l'agriculture, l'industrie et les usages domestiques",
+          en: 'Share of renewable freshwater resources withdrawn annually for agriculture, industry and domestic uses',
+        },
         unit: 'percent',
         unitLabel: { fr: '% ress.', en: '% res.', es: '% rec.' },
         direction: 'lower_is_better',
@@ -43,7 +51,11 @@ const waterBiodiversityModule: DomainModule = {
       },
       {
         id: 'threatened_species',
-        label: { fr: 'Esp\u00e8ces menac\u00e9es', en: 'Threatened species', es: 'Especies amenazadas' },
+        label: { fr: 'Espèces menacées', en: 'Threatened species', es: 'Especies amenazadas' },
+        description: {
+          fr: "Part des espèces évaluées sur le territoire national classées en danger critique, en danger ou vulnérables (Liste rouge UICN)",
+          en: 'Share of species assessed on national territory classified as critically endangered, endangered or vulnerable (IUCN Red List)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% esp\u00e8ces', en: '% species', es: '% especies' },
         direction: 'lower_is_better',
@@ -54,7 +66,11 @@ const waterBiodiversityModule: DomainModule = {
       },
       {
         id: 'protected_areas',
-        label: { fr: 'Aires prot\u00e9g\u00e9es', en: 'Protected areas', es: 'Áreas protegidas' },
+        label: { fr: 'Aires protégées', en: 'Protected areas', es: 'Áreas protegidas' },
+        description: {
+          fr: "Part du territoire terrestre national placée sous protection légale (parcs nationaux, réserves naturelles et zones marines protégées)",
+          en: 'Share of national land territory under legal protection (national parks, nature reserves and marine protected areas)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% territ.', en: '% land', es: '% territ.' },
         direction: 'higher_is_better',

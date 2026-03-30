@@ -21,6 +21,10 @@ const corruptionModule: DomainModule = {
       {
         id: 'cpi_score',
         label: { fr: 'Indice de perception corruption (IPC)', en: 'Corruption Perceptions Index (CPI)', es: 'Índice de Percepción de la Corrupción (IPC)' },
+        description: {
+          fr: "Score de perception de la corruption dans le secteur public, de 0 (très corrompu) à 100 (très propre) — Transparency International",
+          en: 'Public sector corruption perception score from 0 (highly corrupt) to 100 (very clean) — Transparency International',
+        },
         unit: 'index',
         unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const corruptionModule: DomainModule = {
       {
         id: 'press_freedom',
         label: { fr: 'Liberté de la presse (RSF)', en: 'Press freedom (RSF)', es: 'Libertad de prensa (RSF)' },
+        description: {
+          fr: "Score d'indépendance éditoriale et de sécurité des journalistes, de 0 (pas de liberté) à 100 (totale) — RSF",
+          en: 'Editorial independence and journalist safety score from 0 (no freedom) to 100 (full) — Reporters Without Borders',
+        },
         unit: 'index',
         unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
@@ -43,6 +51,10 @@ const corruptionModule: DomainModule = {
       {
         id: 'budget_transparency',
         label: { fr: 'Transparence budgétaire', en: 'Budget transparency', es: 'Transparencia presupuestaria' },
+        description: {
+          fr: "Accessibilité et exhaustivité des informations budgétaires publiques mises à disposition des citoyens (Open Budget Survey)",
+          en: 'Accessibility and comprehensiveness of public budget information made available to citizens (Open Budget Survey)',
+        },
         unit: 'index',
         unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',

@@ -47,6 +47,10 @@ const economicUncertaintyModule: DomainModule = {
           en: 'EPU Index — Economic Policy Uncertainty',
           es: 'Índice EPU — Incertidumbre política económica',
         },
+        description: {
+          fr: "Fréquence des articles de presse mentionnant simultanément 'économie', 'politique' et 'incertitude', normalisée à 100 (Baker, Bloom & Davis)",
+          en: "Frequency of press articles simultaneously mentioning 'economy', 'policy' and 'uncertainty', normalised to 100 (Baker, Bloom & Davis)",
+        },
         // Base 100 = moyenne historique. >200 = période de forte incertitude.
         // Source : Baker, Bloom & Davis (policyuncertainty.com), mensuel.
         unit: 'index',
@@ -63,6 +67,10 @@ const economicUncertaintyModule: DomainModule = {
           fr: "Indice WUI — Incertitude mondiale",
           en: 'WUI Index — World Uncertainty Index',
           es: 'Índice WUI — Índice de incertidumbre mundial',
+        },
+        description: {
+          fr: "Fréquence du mot 'uncertainty' par million de mots dans les rapports trimestriels de l'Economist Intelligence Unit (Ahir, Bloom & Furceri)",
+          en: "Frequency of the word 'uncertainty' per million words in Economist Intelligence Unit quarterly country reports (Ahir, Bloom & Furceri)",
         },
         // Fréquence de "uncertainty" dans rapports EIU par million de mots.
         // Données Q4 2025. Source : Ahir, Bloom & Furceri (worlduncertaintyindex.com).

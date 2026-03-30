@@ -21,6 +21,10 @@ const economicSectorsModule: DomainModule = {
       {
         id: 'gdp_per_capita',
         label: { fr: 'PIB par habitant (PPA, k$)', en: 'GDP per capita (PPP, k$)', es: 'PIB por habitante (PPA, k$)' },
+        description: {
+          fr: "Richesse produite par habitant en milliers de dollars, ajustée à la parité de pouvoir d'achat pour comparer les niveaux de vie",
+          en: 'Wealth produced per capita in thousands of dollars, adjusted for purchasing power parity to compare living standards',
+        },
         unit: 'currency',
         unitLabel: { fr: 'k$ PPA', en: 'k$ PPP', es: 'k$ PPA' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const economicSectorsModule: DomainModule = {
       {
         id: 'unemployment_rate',
         label: { fr: 'Taux de chômage', en: 'Unemployment rate', es: 'Tasa de desempleo' },
+        description: {
+          fr: "Part de la population active qui est sans emploi et en recherche active d'un travail",
+          en: 'Share of the active labour force that is jobless and actively seeking employment',
+        },
         unit: 'percent',
         unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',
@@ -43,6 +51,10 @@ const economicSectorsModule: DomainModule = {
       {
         id: 'services_share',
         label: { fr: 'Part des services (% PIB)', en: 'Services share (% GDP)', es: 'Cuota de servicios (% PIB)' },
+        description: {
+          fr: "Part du secteur tertiaire (commerce, finance, éducation, santé, tourisme...) dans la valeur ajoutée nationale",
+          en: 'Share of the tertiary sector (trade, finance, education, health, tourism...) in national value added',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const economicSectorsModule: DomainModule = {
       {
         id: 'manufacturing_share',
         label: { fr: 'Part industrie manufacturière (% PIB)', en: 'Manufacturing share (% GDP)', es: 'Cuota de industria manufacturera (% PIB)' },
+        description: {
+          fr: "Part de l'industrie de transformation (fabrication de biens) dans le PIB national",
+          en: 'Share of the manufacturing industry (goods production) in national GDP',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',

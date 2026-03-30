@@ -21,6 +21,10 @@ const costOfLivingModule: DomainModule = {
       {
         id: 'housing_cost_ratio',
         label: { fr: 'Coût du logement / revenus', en: 'Housing cost / income ratio', es: 'Coste de vivienda / ingresos' },
+        description: {
+          fr: "Part du revenu disponible des ménages consacrée aux dépenses de logement (loyer ou remboursement hypothécaire)",
+          en: 'Share of household disposable income spent on housing costs (rent or mortgage repayment)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% revenus', en: '% income', es: '% ingresos' },
         direction: 'lower_is_better',
@@ -32,6 +36,10 @@ const costOfLivingModule: DomainModule = {
       {
         id: 'gini_coefficient',
         label: { fr: 'Coefficient de Gini', en: 'Gini coefficient', es: 'Coeficiente de Gini' },
+        description: {
+          fr: "Mesure de l'inégalité de la distribution des revenus : 0 = égalité parfaite, 100 = inégalité maximale",
+          en: 'Measure of income distribution inequality: 0 = perfect equality, 100 = maximum inequality',
+        },
         unit: 'index',
         unitLabel: { fr: 'Gini', en: 'Gini', es: 'Gini' },
         direction: 'lower_is_better',
@@ -43,6 +51,10 @@ const costOfLivingModule: DomainModule = {
       {
         id: 'purchasing_power_index',
         label: { fr: 'Pouvoir d\'achat (PPA)', en: 'Purchasing power (PPP)', es: 'Poder adquisitivo (PPA)' },
+        description: {
+          fr: "Revenu net moyen ajusté à la parité de pouvoir d'achat, base 100 = moyenne OCDE",
+          en: 'Average net income adjusted for purchasing power parity, index 100 = OECD average',
+        },
         unit: 'index',
         unitLabel: { fr: 'base 100', en: 'index 100', es: 'base 100' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const costOfLivingModule: DomainModule = {
       {
         id: 'energy_poverty_rate',
         label: { fr: 'Précarité énergétique', en: 'Energy poverty rate', es: 'Pobreza energética' },
+        description: {
+          fr: "Part des ménages incapables de maintenir un chauffage adéquat ou de payer leurs factures énergétiques",
+          en: 'Share of households unable to maintain adequate heating or pay their energy bills',
+        },
         unit: 'percent',
         unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',

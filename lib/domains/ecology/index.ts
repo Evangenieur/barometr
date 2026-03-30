@@ -22,6 +22,10 @@ const ecologyModule: DomainModule = {
       {
         id: 'co2_per_capita',
         label: { fr: 'Émissions CO₂ par habitant', en: 'CO₂ per capita', es: 'Emisiones CO₂ por habitante' },
+        description: {
+          fr: "Quantité de CO₂ émis par habitant chaque année, toutes sources d'énergie confondues (en tonnes)",
+          en: 'Quantity of CO₂ emitted per inhabitant each year from all energy sources (in tonnes)',
+        },
         unit: 'ratio',
         unitLabel: { fr: 't/hab.', en: 't/cap.', es: 't/hab.' },
         direction: 'lower_is_better',
@@ -33,6 +37,10 @@ const ecologyModule: DomainModule = {
       {
         id: 'renewables_share',
         label: { fr: 'Énergies renouvelables (% électricité)', en: 'Renewables share (% electricity)', es: 'Energías renovables (% electricidad)' },
+        description: {
+          fr: "Part de l'électricité produite à partir de sources renouvelables (solaire, éolien, hydraulique, géothermie)",
+          en: 'Share of electricity generated from renewable sources (solar, wind, hydro, geothermal)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% élec.', en: '% elec.', es: '% elec.' },
         direction: 'higher_is_better',
@@ -44,6 +52,10 @@ const ecologyModule: DomainModule = {
       {
         id: 'forest_coverage',
         label: { fr: 'Couverture forestière', en: 'Forest coverage', es: 'Cobertura forestal' },
+        description: {
+          fr: "Part du territoire national couverte par des forêts (forêts primaires et secondaires confondues)",
+          en: 'Share of national territory covered by forests (primary and secondary forests combined)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% territoire', en: '% land area', es: '% territorio' },
         direction: 'higher_is_better',
@@ -55,6 +67,10 @@ const ecologyModule: DomainModule = {
       {
         id: 'air_quality',
         label: { fr: 'Qualité de l\'air', en: 'Air quality', es: 'Calidad del aire' },
+        description: {
+          fr: "Score de qualité de l'air basé sur la concentration annuelle de particules fines PM2.5 (score inversé : 100 = air très pur)",
+          en: 'Air quality score based on annual PM2.5 fine particle concentration (inverted score: 100 = very clean air)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',

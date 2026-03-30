@@ -22,6 +22,10 @@ const infrastructureModule: DomainModule = {
       {
         id: 'internet_access',
         label: { fr: 'Accès à internet', en: 'Internet access', es: 'Acceso a internet' },
+        description: {
+          fr: "Part de la population ayant utilisé internet (depuis n'importe quel appareil) au cours des 3 derniers mois",
+          en: 'Share of the population that used the internet (from any device) in the last 3 months',
+        },
         unit: 'percent',
         unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'higher_is_better',
@@ -33,6 +37,10 @@ const infrastructureModule: DomainModule = {
       {
         id: 'logistics_performance',
         label: { fr: 'Performance logistique (LPI)', en: 'Logistics performance (LPI)', es: 'Rendimiento logístico (LPI)' },
+        description: {
+          fr: "Score de compétence logistique nationale : douanes, infrastructures, expéditions, qualité des services et suivi des cargaisons (Banque Mondiale, /5)",
+          en: 'National logistics competence score: customs, infrastructure, shipments, service quality and cargo tracking (World Bank, /5)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /5', en: 'index /5', es: 'índice /5' },
         direction: 'higher_is_better',
@@ -44,6 +52,10 @@ const infrastructureModule: DomainModule = {
       {
         id: 'electricity_access',
         label: { fr: 'Accès à l\'électricité', en: 'Electricity access', es: 'Acceso a la electricidad' },
+        description: {
+          fr: "Part de la population disposant d'un accès à l'électricité au domicile, tant en zone urbaine que rurale",
+          en: 'Share of the population with access to electricity at home, in both urban and rural areas',
+        },
         unit: 'percent',
         unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'higher_is_better',
@@ -55,6 +67,10 @@ const infrastructureModule: DomainModule = {
       {
         id: 'road_quality',
         label: { fr: 'Qualité des routes', en: 'Road quality', es: 'Calidad de carreteras' },
+        description: {
+          fr: "Score de qualité du réseau routier basé sur des enquêtes auprès des décideurs économiques (Forum économique mondial, /7)",
+          en: 'Road network quality score based on surveys of business executives (World Economic Forum, /7)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /7', en: 'index /7', es: 'índice /7' },
         direction: 'higher_is_better',

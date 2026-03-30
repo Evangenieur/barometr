@@ -21,6 +21,10 @@ const demographicsModule: DomainModule = {
       {
         id: 'fertility_rate',
         label: { fr: 'Indice de fécondité', en: 'Fertility rate', es: 'Tasa de fecundidad' },
+        description: {
+          fr: "Nombre moyen d'enfants qu'une femme aura au cours de sa vie, à fécondité constante",
+          en: 'Average number of children a woman will have during her lifetime at current fertility rates',
+        },
         unit: 'ratio',
         unitLabel: { fr: 'enfants/femme', en: 'children/woman', es: 'hijos/mujer' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const demographicsModule: DomainModule = {
       {
         id: 'median_age',
         label: { fr: 'Âge médian', en: 'Median age', es: 'Edad mediana' },
+        description: {
+          fr: "Âge qui divise la population en deux moitiés égales : la moitié est plus jeune, la moitié est plus âgée",
+          en: 'Age that divides the population into two equal halves: half are younger, half are older',
+        },
         unit: 'years',
         unitLabel: { fr: 'ans', en: 'years', es: 'años' },
         direction: 'lower_is_better',
@@ -43,6 +51,10 @@ const demographicsModule: DomainModule = {
       {
         id: 'urbanization_rate',
         label: { fr: 'Taux d\'urbanisation', en: 'Urbanization rate', es: 'Tasa de urbanización' },
+        description: {
+          fr: "Part de la population totale vivant dans des zones urbaines ou agglomérations",
+          en: 'Share of the total population living in urban areas or agglomerations',
+        },
         unit: 'percent',
         unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const demographicsModule: DomainModule = {
       {
         id: 'population_growth',
         label: { fr: 'Croissance démographique', en: 'Population growth', es: 'Crecimiento demográfico' },
+        description: {
+          fr: "Variation annuelle de la population totale en pourcentage (naissances – décès + solde migratoire)",
+          en: 'Annual change in total population as a percentage (births – deaths + net migration)',
+        },
         unit: 'percent',
         unitLabel: { fr: '%/an', en: '%/yr', es: '%/año' },
         direction: 'higher_is_better',

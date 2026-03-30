@@ -21,6 +21,10 @@ const securityModule: DomainModule = {
       {
         id: 'homicide_rate',
         label: { fr: 'Taux d\'homicides (pour 100k)', en: 'Homicide rate (per 100k)', es: 'Tasa de homicidios (por 100k)' },
+        description: {
+          fr: "Nombre annuel d'homicides intentionnels pour 100 000 habitants, mesure directe de la violence létale (ONUDC)",
+          en: 'Annual number of intentional homicides per 100,000 inhabitants, a direct measure of lethal violence (UNODC)',
+        },
         unit: 'ratio',
         unitLabel: { fr: '/100 000', en: '/100,000', es: '/100.000' },
         direction: 'lower_is_better',
@@ -32,6 +36,10 @@ const securityModule: DomainModule = {
       {
         id: 'rule_of_law',
         label: { fr: 'État de droit', en: 'Rule of law', es: 'Estado de derecho' },
+        description: {
+          fr: "Percentile de confiance dans les règles de la société, qualité de l'exécution des contrats, droits de propriété et indépendance judiciaire (BM-WGI)",
+          en: 'Percentile of confidence in societal rules, contract enforcement quality, property rights and judicial independence (WB-WGI)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
@@ -43,6 +51,10 @@ const securityModule: DomainModule = {
       {
         id: 'political_stability',
         label: { fr: 'Stabilité politique', en: 'Political stability', es: 'Estabilidad política' },
+        description: {
+          fr: "Score d'absence de violence politique, de coups d'État et d'attentats terroristes menaçant la stabilité gouvernementale (BM-WGI)",
+          en: 'Score of absence of political violence, coups and terrorist attacks threatening governmental stability (WB-WGI)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const securityModule: DomainModule = {
       {
         id: 'global_peace_index',
         label: { fr: 'Indice de paix mondial', en: 'Global peace index', es: 'Índice de paz mundial' },
+        description: {
+          fr: "Score composite mesurant l'absence de conflit, de violence et de militarisme dans 163 pays (Institute for Economics & Peace)",
+          en: 'Composite score measuring the absence of conflict, violence and militarism across 163 countries (Institute for Economics & Peace)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',

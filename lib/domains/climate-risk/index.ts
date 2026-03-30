@@ -21,6 +21,10 @@ const climateRiskModule: DomainModule = {
       {
         id: 'nd_gain_readiness',
         label: { fr: 'Préparation climatique', en: 'Climate readiness', es: 'Preparación climática' },
+        description: {
+          fr: "Capacité d'un pays à mobiliser des investissements publics et privés pour s'adapter au changement climatique (indice ND-GAIN)",
+          en: 'Country capacity to mobilise public and private investment to adapt to climate change (ND-GAIN index)',
+        },
         unit: 'index',
         unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const climateRiskModule: DomainModule = {
       {
         id: 'climate_vulnerability',
         label: { fr: 'Vulnérabilité climatique', en: 'Climate vulnerability', es: 'Vulnerabilidad climática' },
+        description: {
+          fr: "Exposition et sensibilité d'un pays aux impacts négatifs du changement climatique (indice ND-GAIN)",
+          en: 'Exposure and sensitivity of a country to the negative impacts of climate change (ND-GAIN index)',
+        },
         unit: 'index',
         unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'lower_is_better',
@@ -43,6 +51,10 @@ const climateRiskModule: DomainModule = {
       {
         id: 'natural_disaster_deaths',
         label: { fr: 'Décès catastrophes naturelles', en: 'Natural disaster deaths', es: 'Muertes por desastres naturales' },
+        description: {
+          fr: "Nombre annuel moyen de décès dus aux catastrophes naturelles pour un million d'habitants",
+          en: 'Annual average number of deaths from natural disasters per million inhabitants',
+        },
         unit: 'ratio',
         unitLabel: { fr: 'décès/M hab.', en: 'deaths/M pop.', es: 'muertes/M hab.' },
         direction: 'lower_is_better',
@@ -54,6 +66,10 @@ const climateRiskModule: DomainModule = {
       {
         id: 'climate_adaptation_spending',
         label: { fr: 'Dépenses adaptation climat', en: 'Climate adaptation spending', es: 'Gasto en adaptación climática' },
+        description: {
+          fr: "Part du PIB consacrée aux investissements publics d'adaptation aux effets du changement climatique",
+          en: 'Share of GDP spent on public investments to adapt to the effects of climate change',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',

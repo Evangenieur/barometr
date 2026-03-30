@@ -21,6 +21,10 @@ const fiscalModule: DomainModule = {
       {
         id: 'public_debt_gdp',
         label: { fr: 'Dette publique (% PIB)', en: 'Public debt (% GDP)', es: 'Deuda pública (% PIB)' },
+        description: {
+          fr: "Dette brute de l'ensemble des administrations publiques rapportée au PIB, indicateur de soutenabilité budgétaire",
+          en: 'Gross debt of all government entities as a share of GDP, a measure of fiscal sustainability',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'lower_is_better',
@@ -32,6 +36,10 @@ const fiscalModule: DomainModule = {
       {
         id: 'tax_burden_gdp',
         label: { fr: 'Prélèvements obligatoires (% PIB)', en: 'Tax burden (% GDP)', es: 'Carga fiscal (% PIB)' },
+        description: {
+          fr: "Total des recettes fiscales et cotisations sociales collectées par l'État rapporté au PIB",
+          en: 'Total tax revenues and social contributions collected by the state as a share of GDP',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'lower_is_better',
@@ -43,6 +51,10 @@ const fiscalModule: DomainModule = {
       {
         id: 'budget_balance_gdp',
         label: { fr: 'Solde budgétaire (% PIB)', en: 'Budget balance (% GDP)', es: 'Saldo presupuestario (% PIB)' },
+        description: {
+          fr: "Différence entre les recettes et les dépenses de l'État en % du PIB (positif = excédent, négatif = déficit)",
+          en: 'Difference between government revenues and expenditures as % of GDP (positive = surplus, negative = deficit)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const fiscalModule: DomainModule = {
       {
         id: 'fiscal_space_index',
         label: { fr: 'Espace fiscal', en: 'Fiscal space index', es: 'Espacio fiscal' },
+        description: {
+          fr: "Capacité d'un gouvernement à accroître ses dépenses publiques sans compromettre la soutenabilité de sa dette (combinant dette, déficit et réserves)",
+          en: "Government's capacity to increase public spending without jeopardising debt sustainability (combining debt, deficit and reserves)",
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
