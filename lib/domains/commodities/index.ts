@@ -21,6 +21,10 @@ const commoditiesModule: DomainModule = {
       {
         id: 'energy_import_dependence',
         label: { fr: 'Dépendance énergétique importée', en: 'Energy import dependence', es: 'Dependencia energética importada' },
+        description: {
+          fr: "Part de la consommation énergétique nationale couverte par les importations",
+          en: 'Share of national energy consumption covered by imports',
+        },
         unit: 'percent',
         unitLabel: { fr: '% énergie importée', en: '% energy imported', es: '% energía importada' },
         direction: 'lower_is_better',
@@ -32,6 +36,10 @@ const commoditiesModule: DomainModule = {
       {
         id: 'food_security_index',
         label: { fr: 'Indice de sécurité alimentaire', en: 'Food security index', es: 'Índice de seguridad alimentaria' },
+        description: {
+          fr: "Score composite mesurant la disponibilité, l'accessibilité et la qualité alimentaires d'un pays (EIU)",
+          en: 'Composite score measuring food availability, affordability and quality in a country (EIU)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
@@ -43,6 +51,10 @@ const commoditiesModule: DomainModule = {
       {
         id: 'critical_mineral_reserves',
         label: { fr: 'Réserves minérales stratégiques', en: 'Strategic mineral reserves', es: 'Reservas minerales estratégicas' },
+        description: {
+          fr: "Dotation estimée en minerais critiques (lithium, cobalt, terres rares) essentiels aux technologies vertes et à la défense",
+          en: 'Estimated endowment of critical minerals (lithium, cobalt, rare earths) essential for green technologies and defence',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const commoditiesModule: DomainModule = {
       {
         id: 'commodity_export_ratio',
         label: { fr: 'Exportations de matières premières (% export)', en: 'Commodity exports (% of exports)', es: 'Exportaciones de materias primas (% export.)' },
+        description: {
+          fr: "Part des matières premières brutes dans le total des exportations du pays",
+          en: 'Share of raw commodities in the country\'s total exports',
+        },
         unit: 'percent',
         unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'higher_is_better',

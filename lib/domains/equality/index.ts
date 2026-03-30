@@ -21,6 +21,10 @@ const equalityModule: DomainModule = {
       {
         id: 'gender_gap_index',
         label: { fr: "Indice d'écart de genre", en: 'Gender Gap Index', es: 'Índice de brecha de género' },
+        description: {
+          fr: "Score de parité entre hommes et femmes dans quatre domaines : économie, éducation, santé et politique (WEF, 0 = inégalité totale, 1 = parité parfaite)",
+          en: 'Parity score between men and women across four dimensions: economy, education, health and politics (WEF, 0 = full inequality, 1 = full parity)',
+        },
         unit: 'index',
         unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const equalityModule: DomainModule = {
       {
         id: 'women_parliament',
         label: { fr: 'Femmes au parlement', en: 'Women in parliament', es: 'Mujeres en el parlamento' },
+        description: {
+          fr: "Part des sièges parlementaires occupés par des femmes dans la chambre basse ou chambre unique du parlement national",
+          en: 'Share of parliamentary seats held by women in the lower or single chamber of the national parliament',
+        },
         unit: 'percent',
         unitLabel: { fr: '% sièges', en: '% seats', es: '% escaños' },
         direction: 'higher_is_better',
@@ -43,6 +51,10 @@ const equalityModule: DomainModule = {
       {
         id: 'gender_wage_gap',
         label: { fr: 'Écart salarial H/F', en: 'Gender wage gap', es: 'Brecha salarial de género' },
+        description: {
+          fr: "Différence de salaire médian entre les hommes et les femmes, exprimée en pourcentage du salaire masculin",
+          en: 'Difference in median earnings between men and women, expressed as a percentage of male earnings',
+        },
         unit: 'percent',
         unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',
@@ -54,6 +66,10 @@ const equalityModule: DomainModule = {
       {
         id: 'gii_index',
         label: { fr: "Indice d'inégalité de genre", en: 'Gender Inequality Index', es: 'Índice de desigualdad de género' },
+        description: {
+          fr: "Pertes de développement humain dues aux inégalités de genre en santé reproductive, autonomisation et marché du travail (PNUD, 0 = égalité parfaite)",
+          en: 'Human development losses from gender inequalities in reproductive health, empowerment and labour market (UNDP, 0 = full equality)',
+        },
         unit: 'index',
         unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'lower_is_better',

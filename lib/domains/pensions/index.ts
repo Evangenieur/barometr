@@ -20,6 +20,10 @@ const pensionsModule: DomainModule = {
       {
         id: 'replacement_rate',
         label: { fr: 'Taux de remplacement net', en: 'Net replacement rate', es: 'Tasa de reemplazo neta' },
+        description: {
+          fr: "Pension de retraite nette exprimée en pourcentage du dernier salaire net, indiquant le maintien du niveau de vie à la retraite",
+          en: 'Net pension expressed as a percentage of final net salary, indicating maintenance of living standards in retirement',
+        },
         unit: 'percent',
         unitLabel: { fr: '% du salaire', en: '% of salary', es: '% del salario' },
         direction: 'higher_is_better',
@@ -31,6 +35,10 @@ const pensionsModule: DomainModule = {
       {
         id: 'old_age_dependency',
         label: { fr: 'Ratio de dépendance vieillesse', en: 'Old-age dependency ratio', es: 'Ratio de dependencia de vejez' },
+        description: {
+          fr: "Nombre de personnes âgées de 65 ans et plus pour 100 personnes en âge de travailler (15-64 ans), indicateur de pression sur les retraites",
+          en: 'Number of people aged 65 and over per 100 working-age people (15-64), an indicator of pension system pressure',
+        },
         unit: 'percent',
         unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'lower_is_better',
@@ -42,6 +50,10 @@ const pensionsModule: DomainModule = {
       {
         id: 'pension_assets_gdp',
         label: { fr: 'Actifs fonds retraite / PIB', en: 'Pension fund assets / GDP', es: 'Activos fondos de pensiones / PIB' },
+        description: {
+          fr: "Total des actifs financiers gérés par les fonds de pension (retraite par capitalisation) rapporté au PIB",
+          en: 'Total financial assets managed by pension funds (funded pension schemes) as a share of GDP',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',

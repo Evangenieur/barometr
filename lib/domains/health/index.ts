@@ -22,6 +22,10 @@ const healthModule: DomainModule = {
       {
         id: 'life_expectancy',
         label: { fr: 'Espérance de vie', en: 'Life expectancy', es: 'Esperanza de vida' },
+        description: {
+          fr: "Nombre moyen d'années qu'un nouveau-né peut espérer vivre si les taux de mortalité actuels restent constants",
+          en: 'Average number of years a newborn can expect to live if current mortality rates remain constant',
+        },
         unit: 'years',
         unitLabel: { fr: 'ans', en: 'years', es: 'años' },
         direction: 'higher_is_better',
@@ -33,6 +37,10 @@ const healthModule: DomainModule = {
       {
         id: 'health_expenditure_gdp',
         label: { fr: 'Dépenses santé (% PIB)', en: 'Health spending (% GDP)', es: 'Gasto en salud (% PIB)' },
+        description: {
+          fr: "Part du PIB consacrée aux dépenses de santé courantes (hôpitaux, médecins, médicaments), publiques et privées confondues",
+          en: 'Share of GDP spent on current health expenditure (hospitals, physicians, drugs), combining public and private spending',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
@@ -44,6 +52,10 @@ const healthModule: DomainModule = {
       {
         id: 'hospital_beds',
         label: { fr: 'Lits d\'hôpital (pour 1 000 hab.)', en: 'Hospital beds (per 1,000)', es: 'Camas de hospital (por 1.000 hab.)' },
+        description: {
+          fr: "Nombre de lits d'hôpitaux disponibles (soins aigus, réhabilitation et psychiatrie) pour 1 000 habitants",
+          en: 'Number of hospital beds available (acute care, rehabilitation and psychiatry) per 1,000 inhabitants',
+        },
         unit: 'ratio',
         unitLabel: { fr: 'pour 1 000', en: 'per 1,000', es: 'por 1.000' },
         direction: 'higher_is_better',
@@ -55,6 +67,10 @@ const healthModule: DomainModule = {
       {
         id: 'uhc_index',
         label: { fr: 'Couverture santé universelle', en: 'UHC Index', es: 'Cobertura sanitaria universal' },
+        description: {
+          fr: "Score composite OMS mesurant l'accès effectif aux services de santé essentiels pour l'ensemble de la population (0-100)",
+          en: 'WHO composite score measuring effective access to essential health services for the entire population (0-100)',
+        },
         unit: 'index',
         unitLabel: { fr: 'indice /100', en: 'index /100', es: 'índice /100' },
         direction: 'higher_is_better',

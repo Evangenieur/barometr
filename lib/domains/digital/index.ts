@@ -21,6 +21,10 @@ const digitalModule: DomainModule = {
       {
         id: 'egov_index',
         label: { fr: 'Indice e-gouvernement', en: 'E-Government index', es: 'Índice de gobierno electrónico' },
+        description: {
+          fr: "Niveau de développement des services publics en ligne : infrastructures numériques, ressources humaines et services aux citoyens (ONU)",
+          en: 'Level of online public service development: digital infrastructure, human resources and citizen services (UN)',
+        },
         unit: 'index',
         unitLabel: { fr: 'score', en: 'score', es: 'score' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const digitalModule: DomainModule = {
       {
         id: 'cybersecurity_index',
         label: { fr: 'Indice cybersécurité', en: 'Cybersecurity index', es: 'Índice de ciberseguridad' },
+        description: {
+          fr: "Niveau de maturité national en matière de cybersécurité : cadre légal, capacités techniques, coopération internationale (UIT)",
+          en: 'National cybersecurity maturity level: legal framework, technical capabilities, international cooperation (ITU)',
+        },
         unit: 'index',
         unitLabel: { fr: '/100', en: '/100', es: '/100' },
         direction: 'higher_is_better',
@@ -43,6 +51,10 @@ const digitalModule: DomainModule = {
       {
         id: 'digital_skills',
         label: { fr: 'Compétences numériques', en: 'Digital skills', es: 'Competencias digitales' },
+        description: {
+          fr: "Part de la population possédant des compétences numériques de base ou avancées (traitement de texte, programmation, sécurité en ligne)",
+          en: 'Share of the population with basic or advanced digital skills (word processing, coding, online safety)',
+        },
         unit: 'index',
         unitLabel: { fr: '/100', en: '/100', es: '/100' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const digitalModule: DomainModule = {
       {
         id: 'innovation_index',
         label: { fr: 'Indice d\'innovation', en: 'Innovation index', es: 'Índice de innovación' },
+        description: {
+          fr: "Capacité d'un pays à générer et commercialiser des innovations : brevets, publications, institutions et marché (GII OMPI)",
+          en: "Country's capacity to generate and commercialise innovations: patents, publications, institutions and market (GII WIPO)",
+        },
         unit: 'index',
         unitLabel: { fr: '/100', en: '/100', es: '/100' },
         direction: 'higher_is_better',

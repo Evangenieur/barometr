@@ -21,6 +21,10 @@ const educationModule: DomainModule = {
       {
         id: 'pisa_score',
         label: { fr: 'Score PISA', en: 'PISA score', es: 'Puntuación PISA' },
+        description: {
+          fr: "Score moyen des élèves de 15 ans en mathématiques, lecture et sciences (enquête OCDE, tous les 3 ans)",
+          en: 'Average score of 15-year-old students in mathematics, reading and science (OECD survey, every 3 years)',
+        },
         unit: 'index',
         unitLabel: { fr: 'points', en: 'points', es: 'puntos' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const educationModule: DomainModule = {
       {
         id: 'higher_education_rate',
         label: { fr: 'Taux d\'enseignement supérieur', en: 'Higher education rate', es: 'Tasa de educación superior' },
+        description: {
+          fr: "Part de la population adulte (25-64 ans) titulaire d'un diplôme de l'enseignement supérieur (licence ou équivalent)",
+          en: 'Share of the adult population (25-64) holding a higher education qualification (bachelor degree or equivalent)',
+        },
         unit: 'percent',
         unitLabel: { fr: '% 25-64 ans', en: '% 25-64 yrs', es: '% 25-64 años' },
         direction: 'higher_is_better',
@@ -43,6 +51,10 @@ const educationModule: DomainModule = {
       {
         id: 'r_and_d_gdp_share',
         label: { fr: 'Dépenses R&D (% PIB)', en: 'R&D spending (% GDP)', es: 'Gasto en I+D (% PIB)' },
+        description: {
+          fr: "Part du PIB consacrée aux dépenses de recherche fondamentale, appliquée et développement expérimental",
+          en: 'Share of GDP devoted to expenditure on basic research, applied research and experimental development',
+        },
         unit: 'percent',
         unitLabel: { fr: '% PIB', en: '% GDP', es: '% PIB' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const educationModule: DomainModule = {
       {
         id: 'literacy_rate',
         label: { fr: 'Taux d\'alphabétisation', en: 'Literacy rate', es: 'Tasa de alfabetización' },
+        description: {
+          fr: "Part de la population adulte capable de lire et d'écrire un texte simple dans sa vie quotidienne",
+          en: 'Share of the adult population able to read and write a simple text in their everyday life',
+        },
         unit: 'percent',
         unitLabel: { fr: '%', en: '%', es: '%' },
         direction: 'higher_is_better',

@@ -53,6 +53,10 @@ const geopoliticalRiskModule: DomainModule = {
           en: 'GPR Index — Geopolitical Risk (Caldara & Iacoviello)',
           es: 'Índice GPR — Riesgo geopolítico (Caldara & Iacoviello)',
         },
+        description: {
+          fr: "Fréquence d'articles de presse traitant de guerres, tensions diplomatiques et terrorisme, base 100 = moyenne 1985-2019 (Caldara & Iacoviello)",
+          en: 'Frequency of press articles covering wars, diplomatic tensions and terrorism, base 100 = average 1985-2019 (Caldara & Iacoviello)',
+        },
         // Fréquence mensuelle d'articles de presse sur guerres, tensions et terrorisme.
         // Base 100 = moyenne historique 1985-2019. Source : matteoiacoviello.com/gpr.htm
         unit: 'index',
@@ -70,6 +74,10 @@ const geopoliticalRiskModule: DomainModule = {
           en: 'Political Stability (WB-WGI)',
           es: 'Estabilidad política (WB-WGI)',
         },
+        description: {
+          fr: "Percentile d'absence de violence politique, coups d'État et terrorisme (0-100, 100 = plus stable) — Banque Mondiale WGI",
+          en: 'Percentile of absence of political violence, coups and terrorism (0-100, 100 = most stable) — World Bank WGI',
+        },
         // Percentile 0-100 (100 = plus stable). Absence de violence politique,
         // coups d'État et terrorisme. Source : Banque Mondiale WGI 2024.
         unit: 'index',
@@ -86,6 +94,10 @@ const geopoliticalRiskModule: DomainModule = {
           fr: 'Intensité des conflits armés (UCDP/ACLED)',
           en: 'Armed conflict intensity (UCDP/ACLED)',
           es: 'Intensidad de conflictos armados (UCDP/ACLED)',
+        },
+        description: {
+          fr: "Score inversé (0-100, 100 = aucun conflit) calculé à partir des morts au combat par million d'habitants (UCDP/GED et ACLED)",
+          en: 'Inverted score (0-100, 100 = no conflict) calculated from battle deaths per million inhabitants (UCDP/GED and ACLED)',
         },
         // Score inversé 0-100 (100 = aucun conflit armé actif). Calculé depuis les
         // morts au combat par million d'habitants. Source : UCDP/GED 2025 + ACLED 2025.

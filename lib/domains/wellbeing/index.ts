@@ -21,6 +21,10 @@ const wellbeingModule: DomainModule = {
       {
         id: 'life_satisfaction',
         label: { fr: 'Satisfaction de vie', en: 'Life satisfaction', es: 'Satisfacción con la vida' },
+        description: {
+          fr: "Score moyen d'évaluation de la vie sur une échelle de 0 à 10 (échelle de Cantril), mesuré par le rapport mondial sur le bonheur",
+          en: 'Average life evaluation score on a 0-to-10 scale (Cantril ladder), measured by the World Happiness Report',
+        },
         unit: 'index',
         unitLabel: { fr: 'score /10', en: 'score /10', es: 'score /10' },
         direction: 'higher_is_better',
@@ -32,6 +36,10 @@ const wellbeingModule: DomainModule = {
       {
         id: 'mental_health_disorders',
         label: { fr: 'Troubles de santé mentale', en: 'Mental health disorders', es: 'Trastornos de salud mental' },
+        description: {
+          fr: "Part de la population souffrant d'au moins un trouble de santé mentale (dépression, anxiété, bipolarité, schizophrénie...) — IHME",
+          en: 'Share of the population suffering from at least one mental health disorder (depression, anxiety, bipolar disorder, schizophrenia...) — IHME',
+        },
         unit: 'percent',
         unitLabel: { fr: '% population', en: '% population', es: '% población' },
         direction: 'lower_is_better',
@@ -43,6 +51,10 @@ const wellbeingModule: DomainModule = {
       {
         id: 'work_life_balance',
         label: { fr: 'Équilibre vie pro/perso', en: 'Work-life balance', es: 'Equilibrio vida laboral/personal' },
+        description: {
+          fr: "Score mesurant le temps consacré aux loisirs et soins personnels par rapport au travail, selon l'indice du vivre mieux de l'OCDE",
+          en: 'Score measuring time devoted to leisure and personal care relative to work, according to the OECD Better Life Index',
+        },
         unit: 'index',
         unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',
@@ -54,6 +66,10 @@ const wellbeingModule: DomainModule = {
       {
         id: 'social_support',
         label: { fr: 'Soutien social', en: 'Social support', es: 'Apoyo social' },
+        description: {
+          fr: "Part de la population déclarant avoir un proche sur qui compter en cas de difficulté (enquête Gallup World Poll)",
+          en: 'Share of the population reporting having someone to count on in times of trouble (Gallup World Poll)',
+        },
         unit: 'index',
         unitLabel: { fr: 'score /100', en: 'score /100', es: 'score /100' },
         direction: 'higher_is_better',

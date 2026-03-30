@@ -7,6 +7,7 @@ export type Locale = 'fr' | 'en' | 'es';
 export interface IndicatorDefinition {
   id: string;
   label: Record<string, string>;
+  description?: Record<string, string>;
   unit: UnitType;
   unitLabel: Record<string, string>;
   direction: Direction;
