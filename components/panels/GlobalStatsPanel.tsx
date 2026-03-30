@@ -95,7 +95,7 @@ export function GlobalStatsPanel({
     if (!mod) return null;
     const ind = mod.definition.indicators.find((i) => i.id === activeIndicatorId);
     if (!ind) return null;
-    const description = mod.definition.description[locale] ?? mod.definition.description['en'];
+    const description = ind.description?.[locale] ?? ind.description?.['en'] ?? mod.definition.description[locale] ?? mod.definition.description['en'];
     const dataYear = mod.seedData[0]?.dataYear;
     const sources = mod.definition.seedSources ?? [];
     return { ind, description, dataYear, sources };
