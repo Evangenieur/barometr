@@ -19,11 +19,11 @@ import infrastructureModule from '@/lib/domains/infrastructure';
 import economicSectorsModule from '@/lib/domains/economic-sectors';
 import commoditiesModule from '@/lib/domains/commodities';
 import geopoliticalRiskModule from '@/lib/domains/geopolitical-risk';
+import economicUncertaintyModule from '@/lib/domains/economic-uncertainty';
 import digitalModule from '@/lib/domains/digital';
 import equalityModule from '@/lib/domains/equality';
 import waterBiodiversityModule from '@/lib/domains/water-biodiversity';
 import climateRiskModule from '@/lib/domains/climate-risk';
-import marketStressModule from '@/lib/domains/market-stress';
 
 // ─── Domain groups ────────────────────────────────────────────────────────────
 
@@ -51,7 +51,7 @@ const ALL_DOMAIN_MODULES: DomainModule[] = [
   fiscalModule,
   economicSectorsModule,
   commoditiesModule,
-  marketStressModule,
+  economicUncertaintyModule,
   // Security
   corruptionModule,
   securityModule,
