@@ -24,6 +24,10 @@ import digitalModule from '@/lib/domains/digital';
 import equalityModule from '@/lib/domains/equality';
 import waterBiodiversityModule from '@/lib/domains/water-biodiversity';
 import climateRiskModule from '@/lib/domains/climate-risk';
+import pmiModule from '@/lib/domains/pmi';
+import inflationModule from '@/lib/domains/inflation';
+import consumerConfidenceModule from '@/lib/domains/consumer-confidence';
+import freedomModule from '@/lib/domains/freedom';
 
 // ─── Domain groups ────────────────────────────────────────────────────────────
 
@@ -46,16 +50,20 @@ const ALL_DOMAIN_MODULES: DomainModule[] = [
   infrastructureModule,
   equalityModule,
   digitalModule,
+  consumerConfidenceModule,
   // Economy
   costOfLivingModule,
   fiscalModule,
   economicSectorsModule,
   commoditiesModule,
   economicUncertaintyModule,
+  pmiModule,
+  inflationModule,
   // Security
   corruptionModule,
   securityModule,
   geopoliticalRiskModule,
+  freedomModule,
   // Environment
   ecologyModule,
   waterBiodiversityModule,
