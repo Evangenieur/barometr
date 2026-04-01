@@ -207,7 +207,7 @@ export function CountryPanel({
       {/* Footer */}
       <div className="p-3 border-t border-border-subtle flex-shrink-0">
         <p className="text-2xs text-text-muted text-center">
-          {ui('data', locale)} {aggregate.dataYear} · <span className="text-2xs italic">{ui('estimatedTrend', locale)}</span>
+          {ui('data', locale)} 2023–2026
         </p>
       </div>
     </aside>
